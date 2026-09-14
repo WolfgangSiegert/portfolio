@@ -1,0 +1,201 @@
+{
+  "identity": {
+    "name": "Wolfgang Siegert",
+    "location": "Leipzig, Deutschland",
+    "role": "Frontend Developer",
+    "email": "WoSiegert@hotmail.com",
+    "githubUrl": "https://github.com/WolfgangSiegert"
+  },
+  "hero": {
+    "title": "Frontend.",
+    "accent": "Mit Verstand.",
+    "after": "Und Persönlichkeit.",
+    "text": "Ich bin Wolfgang. Frontend Developer mit Fokus auf Vue, Nuxt und TypeScript. Ich entwickle Webanwendungen und suche Lösungen, die im Alltag einen Unterschied machen.",
+    "craft": [
+      "Vue",
+      "Nuxt",
+      "TypeScript"
+    ],
+    "statement": "Struktur im Code. Menschen im Blick.",
+    "traits": "Entwickler. Teamplayer. Familienmensch."
+  },
+  "about": {
+    "title": "Gute Entwicklung beginnt mit Verstehen.",
+    "paragraphs": [
+      "Mein Weg in die Softwareentwicklung war eine bewusste Entscheidung. Aus der Arbeit mit Sprache und Menschen ging es über eine Ausbildung im Microsoft-ERP-Umfeld zur Entwicklung moderner Webanwendungen.",
+      "Ich tausche mich gern über Aufgaben und Probleme aus. Mir sind Lösungen wichtig, deren Mehrwert in einem gesunden Verhältnis zum Aufwand steht. Mein Schwerpunkt ist das Frontend – und meine Neugier hört dort nicht auf."
+    ],
+    "facts": [
+      "Vue & Nuxt im Fokus",
+      "Erfahrung mit Web & ERP",
+      "Freude am Weiterlernen"
+    ]
+  },
+  "skills": [
+    {
+      "number": "01",
+      "title": "Frontend",
+      "text": "Mein Schwerpunkt: Webanwendungen und ihre Oberflächen.",
+      "items": [
+        "Vue 2 & 3",
+        "Nuxt",
+        "TypeScript",
+        "JavaScript",
+        "HTML & CSS",
+        "Tailwind CSS"
+      ]
+    },
+    {
+      "number": "02",
+      "title": "Architektur & Tooling",
+      "text": "Werkzeuge für Komponenten, State und Entwicklung.",
+      "items": [
+        "Vite",
+        "Pinia / Vuex",
+        "Node.js",
+        "npm / pnpm",
+        "REST-APIs"
+      ]
+    },
+    {
+      "number": "03",
+      "title": "Qualität & Zusammenarbeit",
+      "text": "Testen, abstimmen und gemeinsam weiterentwickeln.",
+      "items": [
+        "Playwright",
+        "Vitest",
+        "Git",
+        "Bitbucket / GitLab",
+        "Jira / Confluence",
+        "Scrum"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "n": "01",
+      "name": "edoobox",
+      "kind": "Produktweiterentwicklung",
+      "company": "Etzensperger Informatik AG · 2024–2026",
+      "text": "Mitarbeit an der Weiterentwicklung von edoobox sowie an Kundenprojekten.",
+      "tags": [
+        "Webanwendung",
+        "Produktentwicklung"
+      ],
+      "tone": "blue"
+    },
+    {
+      "n": "02",
+      "name": "propoints",
+      "kind": "Web-App & Admin-Backend",
+      "company": "LeanERA · 2021–2023",
+      "text": "Mitwirkung an propoints und ZF propoints im Rahmen der Webentwicklung bei LeanERA.",
+      "tags": [
+        "Web-App",
+        "Administration"
+      ],
+      "tone": "ice"
+    },
+    {
+      "n": "03",
+      "name": "roto profiliga",
+      "kind": "Progressive Web App",
+      "company": "LeanERA · 2021–2023",
+      "text": "Mitwirkung an einer Progressive Web App und dem zugehörigen Admin-Backend.",
+      "tags": [
+        "PWA",
+        "Administration"
+      ],
+      "tone": "lime"
+    },
+    {
+      "n": "04",
+      "name": "mindcleanse & sani-kid",
+      "kind": "Mobile Anwendungen",
+      "company": "LeanERA · 2021–2023",
+      "text": "Mitwirkung an mobilen Apps und ihren Admin-Backends.",
+      "tags": [
+        "Mobile Apps",
+        "Administration"
+      ],
+      "tone": "ink"
+    }
+  ],
+  "projectsNote": "Weitere Mitwirkung bei LeanERA: shop.imperii.de mit Vue Storefront. Die farbigen Projektflächen sind typografische Übersichten, keine Produkt-Screenshots.",
+  "experience": [
+    {
+      "date": "01/2024 – 07/2026",
+      "company": "Etzensperger Informatik AG",
+      "role": "Webentwicklung",
+      "paragraphs": [
+        "Kundenprojekte und Mitarbeit an der Produktweiterentwicklung von edoobox."
+      ]
+    },
+    {
+      "date": "01/2021 – 10/2023",
+      "company": "LeanERA GmbH",
+      "role": "Webentwickler · Leipzig",
+      "paragraphs": [
+        "Frontend- und App-Entwicklung mit TypeScript, Vue 3, Nuxt 3, Tailwind CSS, Ionic und Capacitor. Frontend-Testing mit Playwright.",
+        "Zusammenarbeit im cross-funktionalen Scrum-Team, Unterstützung bei CI/CD und Versionsverwaltung sowie Abstimmung mit UX/UI und Kundenmanagement."
+      ]
+    },
+    {
+      "date": "08/2015 – 10/2019",
+      "company": "M+P Solutions",
+      "role": "Anwendungsentwickler · Leipzig",
+      "paragraphs": [
+        "Anforderungsanalysen und technische Spezifikationen für Microsoft Dynamics NAV, Evaluierung von Anpassungen, RDLC-Dokumente sowie 1st- und 2nd-Level-Support."
+      ]
+    }
+  ],
+  "earlierExperience": [
+    "02/2013 – 07/2015: Freiberuflicher Lehrer für Deutsch als Fremdsprache, Leipzig.",
+    "10/2008 – 08/2013: Referent im Bereich Deutsch bei Mobilee e.V., Leipzig."
+  ],
+  "ai": {
+    "title": "Neue Werkzeuge. Eigener Kopf.",
+    "paragraphs": [
+      "ChatGPT, Codex und GitHub Copilot gehören zu meinem Werkzeugkasten für KI-unterstützte Entwicklung.",
+      "Mein Anspruch dabei: Vorschläge verstehen, kritisch prüfen und die Verantwortung für den eigenen Code behalten."
+    ],
+    "tools": [
+      "ChatGPT",
+      "Codex",
+      "GitHub Copilot"
+    ],
+    "note": "Unterstützung im Entwicklungsprozess. Qualität bleibt eine bewusste Entscheidung."
+  },
+  "education": [
+    {
+      "date": "08/2015 – 06/2018 · M+P Solutions, Leipzig",
+      "title": "Fachinformatiker für Anwendungsentwicklung",
+      "text": "IHK-Abschluss: sehr gut (1,3)"
+    },
+    {
+      "date": "10/2005 – 09/2013 · Universität Leipzig",
+      "title": "Deutsch als Fremdsprache & Lusitanistik",
+      "text": "Magisterstudium mit bestandener Zwischenprüfung, ohne Magisterabschluss. Studienaufenthalte in Lissabon und São Paulo."
+    },
+    {
+      "date": "2001 · Robert-Schumann-Gymnasium, Leipzig",
+      "title": "Abitur"
+    }
+  ],
+  "personal": {
+    "title": "Auch abseits des Bildschirms.",
+    "text": "Leipzig ist mein Zuhause. Ich lebe in einer festen Partnerschaft und bin Vater von drei Kindern.",
+    "born": "Geboren am 02.02.1983",
+    "languages": "Sprachen: Deutsch, Englisch, Portugiesisch, Spanisch und Französisch",
+    "interests": [
+      "Heimwerken",
+      "Zeichnen",
+      "Tischtennis",
+      "Fußball"
+    ]
+  },
+  "contact": {
+    "title": "Eine gute Zusammenarbeit beginnt mit einem Hallo.",
+    "text": "Über Aufgaben, Ideen und eine mögliche Zusammenarbeit spreche ich gern persönlich."
+  }
+}
