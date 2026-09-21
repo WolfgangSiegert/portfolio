@@ -134,7 +134,8 @@
       ],
       "tone": "atm",
       "url": "../atm/",
-      "linkLabel": "Lernbank ausprobieren"
+      "linkLabel": "Lernbank ausprobieren",
+      "newTab": true
     }
   ],
   "projectsNote": "Weitere Mitwirkung bei LeanERA: shop.imperii.de mit Vue Storefront. Die farbigen Projektflächen sind typografische Übersichten, keine Produkt-Screenshots.",
