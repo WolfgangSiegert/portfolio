@@ -119,6 +119,22 @@
         "Administration"
       ],
       "tone": "ink"
+    },
+    {
+      "n": "05",
+      "name": "LERN-Bank · Mein Geldautomat",
+      "kind": "Laravel Showcase",
+      "company": "Eigenes Lernprojekt · 2026",
+      "text": "Eine öffentlich zugängliche Geldautomaten-Simulation mit Laravel, Vue, TypeScript und Inertia. Das Projekt zeigt Geschäftsregeln, Transaktionen, Tests und einen produktionsnahen Betrieb.",
+      "tags": [
+        "Laravel",
+        "Vue 3",
+        "TypeScript",
+        "PostgreSQL"
+      ],
+      "tone": "atm",
+      "url": "../atm/",
+      "linkLabel": "Lernbank ausprobieren"
     }
   ],
   "projectsNote": "Weitere Mitwirkung bei LeanERA: shop.imperii.de mit Vue Storefront. Die farbigen Projektflächen sind typografische Übersichten, keine Produkt-Screenshots.",

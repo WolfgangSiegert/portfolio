@@ -61,7 +61,7 @@ $sections = ['ueber-mich'=>'Über mich', 'skills'=>'Skills', 'erfahrung'=>'Erfah
   </section>
   <section class="section" id="projekte" aria-labelledby="projects-title">
     <p class="section-label">04 / Projekte</p><div><h2 id="projects-title">Arbeit, an der ich mitgewirkt habe.</h2><div class="project-grid">
-    <?php foreach ($profile['projects'] as $project): ?><article class="project <?= e($project['tone']) ?>"><div class="project-cover"><span><?= e($project['n']) ?> / <?= e($project['kind']) ?></span><h3><?= e($project['name']) ?></h3></div><div class="project-copy"><p class="meta"><?= e($project['company']) ?></p><p><?= e($project['text']) ?></p><?php tags($project['tags']); ?></div></article><?php endforeach; ?>
+    <?php foreach ($profile['projects'] as $project): ?><article class="project <?= e($project['tone']) ?>"><div class="project-cover"><span><?= e($project['n']) ?> / <?= e($project['kind']) ?></span><h3><?= e($project['name']) ?></h3></div><div class="project-copy"><p class="meta"><?= e($project['company']) ?></p><p><?= e($project['text']) ?></p><?php tags($project['tags']); ?><?php if (isset($project['url'], $project['linkLabel'])): ?><a class="project-link" href="<?= e($project['url']) ?>"><?= e($project['linkLabel']) ?> →</a><?php endif; ?></div></article><?php endforeach; ?>
     </div><p class="note"><?= e($profile['projectsNote']) ?></p></div>
   </section>
   <section class="section dark" id="ai" aria-labelledby="ai-title">
