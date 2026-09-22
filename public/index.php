@@ -17,6 +17,7 @@ $sections = ['ueber-mich'=>'Über mich', 'skills'=>'Skills', 'erfahrung'=>'Erfah
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="<?= e($profile['hero']['text']) ?>">
   <meta name="theme-color" content="#f4f1e9">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <title><?= e($identity['name']) ?> · Frontend Developer in Leipzig</title>
   <link rel="stylesheet" href="assets/portfolio.css">
 </head>
