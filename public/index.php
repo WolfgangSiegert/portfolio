@@ -38,7 +38,7 @@ $sections = ['ueber-mich'=>'Über mich', 'skills'=>'Skills', 'erfahrung'=>'Erfah
     </div>
     <aside class="hero-card" aria-label="Mein Schwerpunkt">
       <span class="card-label">Perspektive / Frontend</span>
-      <div class="monogram" aria-hidden="true">W<span>S</span></div>
+      <img class="profile-photo" src="assets/wolfgang-siegert-portrait.jpg" width="908" height="1200" alt="Porträt von Wolfgang Siegert" fetchpriority="high">
       <p><?= e($profile['hero']['statement']) ?></p>
       <?php tags($profile['hero']['craft']); ?>
       <small><?= e($profile['hero']['traits']) ?></small>

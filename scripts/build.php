@@ -19,6 +19,7 @@ if (str_contains($html, '<?php') || !str_contains($html, '<!doctype html>')) {
 }
 file_put_contents($output . '/index.html', $html);
 copy($root . '/public/assets/portfolio.css', $output . '/assets/portfolio.css');
+copy($root . '/public/assets/wolfgang-siegert-portrait.jpg', $output . '/assets/wolfgang-siegert-portrait.jpg');
 copy($root . '/public/favicon.svg', $output . '/favicon.svg');
 file_put_contents($output . '/.nojekyll', '');
 echo "Statischer Export: $output\n";
