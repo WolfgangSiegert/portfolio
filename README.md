@@ -25,9 +25,9 @@ Die Daten in `content/portfolio.json` sind eine generierte Kopie der zentralen P
 
 1. Dieses PHP-Repository in ein eigenes GitHub-Repository pushen.
 2. Im GitHub-Repository: Settings → Pages → Source: GitHub Actions.
-3. Actions → Publish PHP portfolio to GitHub Pages → Run workflow.
+3. Ein Push auf `main` veröffentlicht die aktuelle Version automatisch. Alternativ: Actions → Publish PHP portfolio to GitHub Pages → Run workflow.
 4. Nach erfolgreichem Workflow zeigt Settings → Pages die veröffentlichte Adresse.
 
-Der Workflow startet nur manuell. Es wird erst veröffentlicht, wenn du ihn ausführst. Für automatische Updates kann später `push` auf `main` als Trigger ergänzt werden.
+Der Workflow startet bei einem Push auf `main` oder manuell. Das Portfolio verlinkt die horizontale Vue-Showcase-Variante unter `/portfolio-vue/`.
 
 Eigene Domain: Settings → Pages → Custom domain. DNS beim Domainanbieter passend konfigurieren und anschließend Enforce HTTPS aktivieren. Die genaue Domain wird nicht vorgegeben.

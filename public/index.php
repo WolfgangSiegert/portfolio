@@ -26,7 +26,10 @@ $sections = ['ueber-mich'=>'Über mich', 'skills'=>'Skills', 'erfahrung'=>'Erfah
 <header class="header">
   <a class="brand" href="#start" aria-label="<?= e($identity['name']) ?> – Start">ws<span>.</span></a>
   <span class="header-name"><?= e($identity['name']) ?><small><?= e($identity['role']) ?></small></span>
-  <a class="contact-link" href="#kontakt">Kontakt ↗</a>
+  <nav class="header-links" aria-label="Portfolio-Ansichten">
+    <a class="showcase-link" href="../portfolio-vue/">Vue Showcase <span aria-hidden="true">→</span><small>horizontal</small></a>
+    <a class="contact-link" href="#kontakt">Kontakt ↗</a>
+  </nav>
 </header>
 <main id="inhalt">
   <section class="hero" id="start" aria-labelledby="hero-title">

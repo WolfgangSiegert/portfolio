@@ -6,3 +6,12 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @media print{.header,.section-nav,.actions,.skip{display:none}.hero,.section{padding:1rem 0;display:block;break-inside:avoid}.hero-card{display:none}h1{font-size:2rem}h2{font-size:1.5rem}.project-grid{display:block}.dark,.green,.contact{background:white;color:black}.dark .copy,.dark .note{color:black}}
 .profile-photo{display:block;width:min(100%,310px);height:auto;aspect-ratio:1;margin:1.4rem auto;object-fit:cover;object-position:center top;border-radius:50%}
+
+/* Keep the experimental Vue build visibly connected to the primary portfolio. */
+.header-links{margin-left:auto;display:flex;align-items:center;gap:1.4rem}
+.header-links a{text-decoration:none}
+.showcase-link{display:grid;grid-template-columns:auto auto;gap:.1rem .45rem;align-items:center;padding:.55rem .8rem;border:1px solid var(--line);border-radius:4px;font-size:.8rem;font-weight:600}
+.showcase-link small{grid-column:1/-1;color:var(--muted);font-size:.65rem;font-weight:400;letter-spacing:.06em;text-transform:uppercase}
+.showcase-link:hover{border-color:var(--accent);color:var(--accent)}
+.header-links .contact-link{margin-left:0}
+@media(max-width:700px){.header{align-items:flex-start}.header-name{display:none}.header-links{gap:.8rem}.showcase-link{padding:.45rem .65rem}.header-links .contact-link{padding-top:.55rem;font-size:.8rem}}
