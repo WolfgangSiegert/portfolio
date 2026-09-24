@@ -6,6 +6,22 @@
     "email": "WoSiegert@hotmail.com",
     "githubUrl": "https://github.com/WolfgangSiegert"
   },
+  "documents": [
+    {
+      "label": "Frontend-Profil",
+      "detail": "Öffentliche Version · 2 Seiten",
+      "href": "downloads/wolfgang-siegert-frontend-developer.pdf"
+    },
+    {
+      "label": "Kurzprofil & Lebenslauf",
+      "detail": "Öffentliche Version · 2 Seiten",
+      "href": "downloads/wolfgang-siegert-kurzprofil-lebenslauf.pdf"
+    }
+  ],
+  "documentRequest": {
+    "label": "Vollständigen Lebenslauf anfragen",
+    "href": "mailto:WoSiegert@hotmail.com?subject=Anfrage%20zum%20vollst%C3%A4ndigen%20Lebenslauf"
+  },
   "hero": {
     "title": "Frontend.",
     "accent": "Mit Verstand.",

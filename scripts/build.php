@@ -6,6 +6,7 @@ set_error_handler(static function (int $severity, string $message, string $file,
     throw new ErrorException($message, 0, $severity, $file, $line);
 });
 if (!is_dir($output . '/assets')) mkdir($output . '/assets', 0755, true);
+if (!is_dir($output . '/downloads')) mkdir($output . '/downloads', 0755, true);
 ob_start();
 try {
     require $root . '/public/index.php';
@@ -20,6 +21,8 @@ if (str_contains($html, '<?php') || !str_contains($html, '<!doctype html>')) {
 file_put_contents($output . '/index.html', $html);
 copy($root . '/public/assets/portfolio.css', $output . '/assets/portfolio.css');
 copy($root . '/public/assets/wolfgang-siegert-portrait.jpg', $output . '/assets/wolfgang-siegert-portrait.jpg');
+copy($root . '/public/downloads/wolfgang-siegert-frontend-developer.pdf', $output . '/downloads/wolfgang-siegert-frontend-developer.pdf');
+copy($root . '/public/downloads/wolfgang-siegert-kurzprofil-lebenslauf.pdf', $output . '/downloads/wolfgang-siegert-kurzprofil-lebenslauf.pdf');
 copy($root . '/public/favicon.svg', $output . '/favicon.svg');
 file_put_contents($output . '/.nojekyll', '');
 echo "Statischer Export: $output\n";

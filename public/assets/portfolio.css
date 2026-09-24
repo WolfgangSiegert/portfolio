@@ -21,3 +21,8 @@
 .view-switch a:focus-visible{outline-offset:2px}
 .header-links .contact-link{margin-left:0}
 @media(max-width:700px){.header{flex-wrap:wrap}.header-name{display:none}.header-links{gap:.6rem;flex-wrap:wrap}.view-switch{width:80px}.view-switch a{padding:7px}.view-switch svg{width:15px;height:15px}.header-links .contact-link{font-size:.8rem}}
+.document-links{display:grid;max-width:430px;margin-top:1.6rem;border-top:1px solid var(--line)}
+.document-links a{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:.8rem 0;border-bottom:1px solid var(--line);font-size:.82rem;text-decoration:none}
+.document-links a:hover strong{color:var(--accent)}
+.document-links a>span:first-child{display:grid;gap:.15rem}
+.document-links small{color:var(--muted);font-size:.7rem}
