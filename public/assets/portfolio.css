@@ -10,8 +10,10 @@
 /* Keep the experimental Vue build visibly connected to the primary portfolio. */
 .header-links{margin-left:auto;display:flex;align-items:center;gap:1.4rem}
 .header-links a{text-decoration:none}
-.showcase-link{display:grid;grid-template-columns:auto auto;gap:.1rem .45rem;align-items:center;padding:.55rem .8rem;border:1px solid var(--line);border-radius:4px;font-size:.8rem;font-weight:600}
-.showcase-link small{grid-column:1/-1;color:var(--muted);font-size:.65rem;font-weight:400;letter-spacing:.06em;text-transform:uppercase}
-.showcase-link:hover{border-color:var(--accent);color:var(--accent)}
+.view-switch{display:flex;align-items:stretch;padding:3px;border:1px solid var(--line);border-radius:8px;font-size:.8rem}
+.view-switch a{display:flex;flex-direction:column;justify-content:center;gap:2px;padding:8px 12px;border-radius:5px;white-space:nowrap}
+.view-switch a[aria-current]{background:var(--ink);color:white}
+.view-switch a:hover:not([aria-current]){background:var(--green)}
+.view-switch small{font-size:.62rem;letter-spacing:.04em}
 .header-links .contact-link{margin-left:0}
-@media(max-width:700px){.header{align-items:flex-start}.header-name{display:none}.header-links{gap:.8rem}.showcase-link{padding:.45rem .65rem}.header-links .contact-link{padding-top:.55rem;font-size:.8rem}}
+@media(max-width:700px){.header{flex-wrap:wrap}.header-name{display:none}.header-links{gap:.6rem;flex-wrap:wrap}.view-switch a{padding:7px 8px;font-size:.75rem}.header-links .contact-link{font-size:.8rem}}
