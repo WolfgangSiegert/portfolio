@@ -98,7 +98,14 @@
         "Webanwendung",
         "Produktentwicklung"
       ],
-      "tone": "blue"
+      "tone": "blue",
+      "links": [
+        {
+          "href": "https://www.edoobox.com/de/",
+          "label": "edoobox ansehen",
+          "newTab": true
+        }
+      ]
     },
     {
       "n": "02",
@@ -110,7 +117,14 @@
         "Web-App",
         "Administration"
       ],
-      "tone": "ice"
+      "tone": "ice",
+      "links": [
+        {
+          "href": "https://www.propoints.com/de/de",
+          "label": "propoints ansehen",
+          "newTab": true
+        }
+      ]
     },
     {
       "n": "03",
@@ -122,7 +136,14 @@
         "PWA",
         "Administration"
       ],
-      "tone": "lime"
+      "tone": "lime",
+      "links": [
+        {
+          "href": "https://www.roto-frank.com/de/profiliga",
+          "label": "ProfiLiga ansehen",
+          "newTab": true
+        }
+      ]
     },
     {
       "n": "04",
@@ -134,7 +155,19 @@
         "Mobile Apps",
         "Administration"
       ],
-      "tone": "ink"
+      "tone": "ink",
+      "links": [
+        {
+          "href": "https://apps.apple.com/de/app/mindcleanse-bewusstseinscoach/id6443706321",
+          "label": "MINDCLEANSE App ansehen",
+          "newTab": true
+        },
+        {
+          "href": "https://www.sani-kid.de/",
+          "label": "Sani Kid ansehen",
+          "newTab": true
+        }
+      ]
     },
     {
       "n": "05",
@@ -149,12 +182,15 @@
         "PostgreSQL"
       ],
       "tone": "atm",
-      "url": "../atm/",
-      "linkLabel": "Lernbank ausprobieren",
-      "newTab": true
+      "links": [
+        {
+          "href": "../atm/",
+          "label": "Lernbank ausprobieren",
+          "newTab": true
+        }
+      ]
     }
   ],
-  "projectsNote": "Weitere Mitwirkung bei LeanERA: shop.imperii.de mit Vue Storefront. Die farbigen Projektflächen sind typografische Übersichten, keine Produkt-Screenshots.",
   "experience": [
     {
       "date": "01/2024 – 07/2026",
