@@ -27,9 +27,9 @@ $sections = ['ueber-mich'=>'Über mich', 'skills'=>'Skills', 'erfahrung'=>'Erfah
   <a class="brand" href="#start" aria-label="<?= e($identity['name']) ?> – Start">ws<span>.</span></a>
   <span class="header-name"><?= e($identity['name']) ?><small><?= e($identity['role']) ?></small></span>
   <div class="header-links">
-    <nav class="view-switch" aria-label="Portfolio-Ansicht">
-      <a href="./" aria-current="page">Hauptansicht</a>
-      <a href="../portfolio-vue/">Horizontal <small>Showcase</small></a>
+    <nav class="view-switch view-switch--vertical" aria-label="Portfolio-Ansicht">
+      <a href="./" aria-label="Vertikale Ansicht" data-label="Layout vertikal" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="5" rx="1"/><rect x="3" y="10" width="18" height="5" rx="1"/><rect x="3" y="17" width="18" height="4" rx="1"/></svg></a>
+      <a href="../portfolio-vue/" aria-label="Horizontale Ansicht" data-label="Layout horizontal"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="5" height="18" rx="1"/><rect x="10" y="3" width="5" height="18" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg></a>
     </nav>
     <a class="contact-link" href="#kontakt">Kontakt ↗</a>
   </div>

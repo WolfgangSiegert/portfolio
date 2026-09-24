@@ -10,10 +10,14 @@
 /* Keep the experimental Vue build visibly connected to the primary portfolio. */
 .header-links{margin-left:auto;display:flex;align-items:center;gap:1.4rem}
 .header-links a{text-decoration:none}
-.view-switch{display:flex;align-items:stretch;padding:3px;border:1px solid var(--line);border-radius:8px;font-size:.8rem}
-.view-switch a{display:flex;flex-direction:column;justify-content:center;gap:2px;padding:8px 12px;border-radius:5px;white-space:nowrap}
-.view-switch a[aria-current]{background:var(--ink);color:white}
-.view-switch a:hover:not([aria-current]){background:var(--green)}
-.view-switch small{font-size:.62rem;letter-spacing:.04em}
+.view-switch{position:relative;isolation:isolate;display:grid;width:86px;grid-template-columns:repeat(2,minmax(0,1fr));padding:3px;border:1px solid #c3cbbd;border-radius:999px;background:#e7eadf;box-shadow:inset 0 1px 3px #202b2614;font-size:.75rem}
+.view-switch::before{position:absolute;z-index:0;inset:3px auto 3px 3px;width:calc(50% - 3px);border-radius:999px;background:var(--ink);box-shadow:0 2px 7px #202b2629;content:"";transition:transform .18s ease}
+.view-switch--horizontal::before{transform:translateX(100%)}
+.view-switch a{position:relative;z-index:1;display:flex;min-width:0;align-items:center;justify-content:center;padding:8px;border-radius:999px;color:var(--muted);white-space:nowrap;transition:color .18s ease}
+.view-switch a[aria-current]{color:#fff}
+.view-switch a:hover:not([aria-current]){color:var(--accent)}
+.view-switch svg{width:17px;height:17px;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:1.7}
+.view-switch a::after{position:absolute;top:calc(100% + 10px);left:50%;padding:6px 8px;transform:translate(-50%,-3px);border-radius:5px;background:var(--ink);color:#fff;box-shadow:0 3px 10px #202b262e;content:attr(data-label);font-size:.68rem;font-weight:500;letter-spacing:.01em;line-height:1;opacity:0;pointer-events:none;transition:opacity .14s ease,transform .14s ease;visibility:hidden}.view-switch a:hover::after,.view-switch a:focus-visible::after{transform:translate(-50%,0);opacity:1;visibility:visible}
+.view-switch a:focus-visible{outline-offset:2px}
 .header-links .contact-link{margin-left:0}
-@media(max-width:700px){.header{flex-wrap:wrap}.header-name{display:none}.header-links{gap:.6rem;flex-wrap:wrap}.view-switch a{padding:7px 8px;font-size:.75rem}.header-links .contact-link{font-size:.8rem}}
+@media(max-width:700px){.header{flex-wrap:wrap}.header-name{display:none}.header-links{gap:.6rem;flex-wrap:wrap}.view-switch{width:80px}.view-switch a{padding:7px}.view-switch svg{width:15px;height:15px}.header-links .contact-link{font-size:.8rem}}
