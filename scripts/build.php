@@ -22,6 +22,8 @@ copy($root . '/public/assets/portfolio.css', $output . '/assets/portfolio.css');
 copy($root . '/public/assets/wolfgang-siegert-portrait.jpg', $output . '/assets/wolfgang-siegert-portrait.jpg');
 copy($root . '/public/downloads/wolfgang-siegert-frontend-developer.pdf', $output . '/downloads/wolfgang-siegert-frontend-developer.pdf');
 copy($root . '/public/downloads/wolfgang-siegert-kurzprofil-lebenslauf.pdf', $output . '/downloads/wolfgang-siegert-kurzprofil-lebenslauf.pdf');
+copy($root . '/public/downloads/wolfgang-siegert-frontend-developer-en.pdf', $output . '/downloads/wolfgang-siegert-frontend-developer-en.pdf');
+copy($root . '/public/downloads/wolfgang-siegert-professional-profile-cv-en.pdf', $output . '/downloads/wolfgang-siegert-professional-profile-cv-en.pdf');
 copy($root . '/public/favicon.svg', $output . '/favicon.svg');
 file_put_contents($output . '/.nojekyll', '');
 echo "Statischer Export: $output\n";

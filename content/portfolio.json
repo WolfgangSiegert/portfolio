@@ -302,7 +302,18 @@
       "email": "WoSiegert@hotmail.com",
       "githubUrl": "https://github.com/WolfgangSiegert"
     },
-    "documents": [],
+    "documents": [
+      {
+        "label": "Frontend profile",
+        "detail": "Public version · 2 pages",
+        "href": "../downloads/wolfgang-siegert-frontend-developer-en.pdf"
+      },
+      {
+        "label": "Professional profile & CV",
+        "detail": "Public version · 2 pages",
+        "href": "../downloads/wolfgang-siegert-professional-profile-cv-en.pdf"
+      }
+    ],
     "documentRequest": {
       "label": "Request CV & certificates",
       "detail": "Full CV, references and certificates by email",

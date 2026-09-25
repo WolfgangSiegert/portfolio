@@ -96,7 +96,7 @@ $sections = $en
   <a class="brand" href="#start" aria-label="<?= e($identity['name']) ?> – <?= t($en, 'Start', 'Home') ?>">ws<span>.</span></a>
   <span class="header-name"><?= e($identity['name']) ?><small><?= e($identity['role']) ?></small></span>
   <div class="header-links">
-    <a class="language-switch" href="<?= e($languageHref) ?>" lang="<?= $en ? 'de' : 'en' ?>" hreflang="<?= $en ? 'de' : 'en' ?>" aria-label="<?= t($en, 'English version', 'Deutsche Version') ?>"><?= $en ? 'DE' : 'EN' ?></a>
+    <a class="language-switch" href="<?= e($languageHref) ?>" lang="<?= $en ? 'de' : 'en' ?>" hreflang="<?= $en ? 'de' : 'en' ?>" aria-label="<?= t($en, 'Zur englischen Version wechseln', 'Switch to German') ?>" title="<?= t($en, 'Zur englischen Version wechseln', 'Switch to German') ?>"><span aria-hidden="true"><?= $en ? '🇩🇪' : '🇬🇧' ?></span></a>
     <nav class="view-switch view-switch--vertical" aria-label="Portfolio-Ansicht">
       <a href="<?= $en && isset($argv[1]) ? '../' : './' ?>" aria-label="Vertikale Ansicht" data-label="Layout vertikal" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="5" rx="1"/><rect x="3" y="10" width="18" height="5" rx="1"/><rect x="3" y="17" width="18" height="4" rx="1"/></svg></a>
       <a href="<?= $en && isset($argv[1]) ? '../../portfolio-vue/?lang=en' : '../portfolio-vue/' ?>" aria-label="Horizontale Ansicht" data-label="Layout horizontal"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="5" height="18" rx="1"/><rect x="10" y="3" width="5" height="18" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg></a>
