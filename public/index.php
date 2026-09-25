@@ -1,7 +1,13 @@
 <?php
 declare(strict_types=1);
-$profile = json_decode(file_get_contents(__DIR__ . '/../content/portfolio.json'), true, 512, JSON_THROW_ON_ERROR);
+$profiles = json_decode(file_get_contents(__DIR__ . '/../content/portfolio.json'), true, 512, JSON_THROW_ON_ERROR);
+$locale = (($argv[1] ?? null) ?? ($_GET['lang'] ?? 'de')) === 'en' ? 'en' : 'de';
+$en = $locale === 'en';
+$profile = $profiles[$locale];
+$languageHref = isset($argv[1]) ? ($en ? '../' : 'en/') : ($en ? './' : '?lang=en');
+$assetBase = isset($argv[1]) && $en ? '../' : '';
 function e(string $value): string { return htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); }
+function t(bool $en, string $de, string $english): string { return $en ? $english : $de; }
 function icon(string $name, string $class = 'icon'): string {
     $paths = [
         'user'=>'<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
@@ -50,9 +56,9 @@ function tag_icon(string $label): string {
         'Codex'=>['openai'], 'GitHub Copilot'=>['copilot'], 'Laravel'=>['laravel'], 'PostgreSQL'=>['postgresql'],
     ];
     $areas = [
-        'REST-APIs'=>'braces', 'Webanwendung'=>'app', 'Web-App'=>'panels', 'PWA'=>'monitor', 'Produktentwicklung'=>'package',
-        'Administration'=>'sliders', 'Mobile Apps'=>'smartphone', 'Scrum'=>'users', 'Heimwerken'=>'hammer', 'Zeichnen'=>'pencil',
-        'Tischtennis'=>'trophy', 'Fußball'=>'circle',
+        'REST-APIs'=>'braces', 'REST APIs'=>'braces', 'Webanwendung'=>'app', 'Web application'=>'app', 'Web-App'=>'panels', 'Web app'=>'panels', 'PWA'=>'monitor', 'Produktentwicklung'=>'package', 'Product development'=>'package',
+        'Administration'=>'sliders', 'Mobile Apps'=>'smartphone', 'Mobile apps'=>'smartphone', 'Scrum'=>'users', 'Heimwerken'=>'hammer', 'DIY'=>'hammer', 'Zeichnen'=>'pencil', 'Drawing'=>'pencil',
+        'Tischtennis'=>'trophy', 'Table tennis'=>'trophy', 'Fußball'=>'circle', 'Football'=>'circle',
     ];
     $icons = '';
     foreach ($brands[$label] ?? [] as $brand) $icons .= brand_icon($brand);
@@ -61,7 +67,7 @@ function tag_icon(string $label): string {
     return '<span class="tag-icon-set" aria-hidden="true">' . $icons . '</span>';
 }
 function work_area_icon(string $title): string {
-    return icon(['Frontend'=>'code', 'Architektur & Tooling'=>'boxes', 'Qualität & Zusammenarbeit'=>'flask'][$title] ?? 'check', 'entry-heading-icon');
+    return icon(['Frontend'=>'code', 'Architektur & Tooling'=>'boxes', 'Architecture & tooling'=>'boxes', 'Qualität & Zusammenarbeit'=>'flask', 'Quality & collaboration'=>'flask'][$title] ?? 'check', 'entry-heading-icon');
 }
 function tags(array $items): void {
     echo '<ul class="tags">';
@@ -69,30 +75,33 @@ function tags(array $items): void {
     echo '</ul>';
 }
 $identity = $profile['identity'];
-$sections = ['ueber-mich'=>'Über mich', 'skills'=>'Skills', 'erfahrung'=>'Erfahrung', 'projekte'=>'Projekte', 'ai'=>'KI & Entwicklung', 'ausbildung'=>'Ausbildung', 'persoenlich'=>'Persönlich', 'kontakt'=>'Kontakt'];
+$sections = $en
+    ? ['ueber-mich'=>'About me', 'skills'=>'Skills', 'erfahrung'=>'Experience', 'projekte'=>'Projects', 'ai'=>'AI & development', 'ausbildung'=>'Education', 'persoenlich'=>'Personal', 'kontakt'=>'Contact']
+    : ['ueber-mich'=>'Über mich', 'skills'=>'Skills', 'erfahrung'=>'Erfahrung', 'projekte'=>'Projekte', 'ai'=>'KI & Entwicklung', 'ausbildung'=>'Ausbildung', 'persoenlich'=>'Persönlich', 'kontakt'=>'Kontakt'];
 ?>
 <!doctype html>
-<html lang="de">
+<html lang="<?= e($locale) ?>">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="<?= e($profile['hero']['text']) ?>">
   <meta name="theme-color" content="#f4f1e9">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="<?= $assetBase ?>favicon.svg" type="image/svg+xml">
   <title><?= e($identity['name']) ?> · Frontend Developer in Leipzig</title>
-  <link rel="stylesheet" href="assets/portfolio.css">
+  <link rel="stylesheet" href="<?= $assetBase ?>assets/portfolio.css">
 </head>
 <body>
-<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<a class="skip" href="#inhalt"><?= t($en, 'Zum Inhalt springen', 'Skip to content') ?></a>
 <header class="header">
-  <a class="brand" href="#start" aria-label="<?= e($identity['name']) ?> – Start">ws<span>.</span></a>
+  <a class="brand" href="#start" aria-label="<?= e($identity['name']) ?> – <?= t($en, 'Start', 'Home') ?>">ws<span>.</span></a>
   <span class="header-name"><?= e($identity['name']) ?><small><?= e($identity['role']) ?></small></span>
   <div class="header-links">
+    <a class="language-switch" href="<?= e($languageHref) ?>" lang="<?= $en ? 'de' : 'en' ?>" hreflang="<?= $en ? 'de' : 'en' ?>" aria-label="<?= t($en, 'English version', 'Deutsche Version') ?>"><?= $en ? 'DE' : 'EN' ?></a>
     <nav class="view-switch view-switch--vertical" aria-label="Portfolio-Ansicht">
-      <a href="./" aria-label="Vertikale Ansicht" data-label="Layout vertikal" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="5" rx="1"/><rect x="3" y="10" width="18" height="5" rx="1"/><rect x="3" y="17" width="18" height="4" rx="1"/></svg></a>
-      <a href="../portfolio-vue/" aria-label="Horizontale Ansicht" data-label="Layout horizontal"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="5" height="18" rx="1"/><rect x="10" y="3" width="5" height="18" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg></a>
+      <a href="<?= $en && isset($argv[1]) ? '../' : './' ?>" aria-label="Vertikale Ansicht" data-label="Layout vertikal" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="5" rx="1"/><rect x="3" y="10" width="18" height="5" rx="1"/><rect x="3" y="17" width="18" height="4" rx="1"/></svg></a>
+      <a href="<?= $en && isset($argv[1]) ? '../../portfolio-vue/?lang=en' : '../portfolio-vue/' ?>" aria-label="Horizontale Ansicht" data-label="Layout horizontal"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="5" height="18" rx="1"/><rect x="10" y="3" width="5" height="18" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg></a>
     </nav>
-    <a class="contact-link icon-link" href="#kontakt">Kontakt <?= icon('arrow-up-right') ?></a>
+    <a class="contact-link icon-link" href="#kontakt"><?= t($en, 'Kontakt', 'Contact') ?> <?= icon('arrow-up-right') ?></a>
   </div>
 </header>
 <main id="inhalt">
@@ -101,50 +110,50 @@ $sections = ['ueber-mich'=>'Über mich', 'skills'=>'Skills', 'erfahrung'=>'Erfah
       <p class="eyebrow"><span class="dot"></span><?= e($identity['location']) ?> / <?= e($identity['role']) ?></p>
       <h1 id="hero-title"><?= e($profile['hero']['title']) ?><br><em><?= e($profile['hero']['accent']) ?></em><br><?= e($profile['hero']['after']) ?></h1>
       <p class="lead"><?= e($profile['hero']['text']) ?></p>
-      <div class="actions"><a class="button icon-link" href="#projekte"><?= icon('folder') ?>Meine Arbeit entdecken<?= icon('arrow-right') ?></a><a class="icon-link" href="#ueber-mich"><?= icon('user') ?>Über mich<?= icon('arrow-up-right') ?></a></div>
+      <div class="actions"><a class="button icon-link" href="#projekte"><?= icon('folder') ?><?= t($en, 'Meine Arbeit entdecken', 'Explore my work') ?><?= icon('arrow-right') ?></a><a class="icon-link" href="#ueber-mich"><?= icon('user') ?><?= t($en, 'Über mich', 'About me') ?><?= icon('arrow-up-right') ?></a></div>
     </div>
-    <aside class="hero-card" aria-label="Mein Schwerpunkt">
-      <span class="card-label">Perspektive / Frontend</span>
-      <img class="profile-photo" src="assets/wolfgang-siegert-portrait.jpg" width="908" height="1200" alt="Porträt von Wolfgang Siegert" fetchpriority="high">
+    <aside class="hero-card" aria-label="<?= t($en, 'Mein Schwerpunkt', 'My focus') ?>">
+      <span class="card-label"><?= t($en, 'Perspektive / Frontend', 'Perspective / Frontend') ?></span>
+      <img class="profile-photo" src="<?= $assetBase ?>assets/wolfgang-siegert-portrait.jpg" width="908" height="1200" alt="<?= t($en, 'Porträt von Wolfgang Siegert', 'Portrait of Wolfgang Siegert') ?>" fetchpriority="high">
       <p><?= e($profile['hero']['statement']) ?></p>
       <?php tags($profile['hero']['craft']); ?>
       <small><?= e($profile['hero']['traits']) ?></small>
     </aside>
   </section>
-  <nav class="section-nav" aria-label="Abschnitte"><?php foreach ($sections as $id=>$label): ?><a href="#<?= e($id) ?>"><?= e($label) ?></a><?php endforeach; ?></nav>
+  <nav class="section-nav" aria-label="<?= t($en, 'Abschnitte', 'Sections') ?>"><?php foreach ($sections as $id=>$label): ?><a href="#<?= e($id) ?>"><?= e($label) ?></a><?php endforeach; ?></nav>
   <section class="section" id="ueber-mich" aria-labelledby="about-title">
-    <p class="section-label">01 / Über mich</p><div><h2 id="about-title" class="heading-with-icon"><?= icon('user') ?><span><?= e($profile['about']['title']) ?></span></h2>
+    <p class="section-label">01 / <?= t($en, 'Über mich', 'About me') ?></p><div><h2 id="about-title" class="heading-with-icon"><?= icon('user') ?><span><?= e($profile['about']['title']) ?></span></h2>
     <?php foreach ($profile['about']['paragraphs'] as $paragraph): ?><p class="copy"><?= e($paragraph) ?></p><?php endforeach; ?>
     <?php tags($profile['about']['facts']); ?></div>
   </section>
   <section class="section green" id="skills" aria-labelledby="skills-title">
-    <p class="section-label">02 / Skills</p><div><h2 id="skills-title" class="heading-with-icon"><?= icon('code') ?><span>Mein Werkzeugkasten.</span></h2><div class="skill-grid">
+    <p class="section-label">02 / Skills</p><div><h2 id="skills-title" class="heading-with-icon"><?= icon('code') ?><span><?= t($en, 'Mein Werkzeugkasten.', 'My toolkit.') ?></span></h2><div class="skill-grid">
     <?php foreach ($profile['skills'] as $skill): ?><article class="skill"><span class="meta"><?= e($skill['number']) ?></span><h3 class="entry-heading"><?= work_area_icon($skill['title']) ?><span><?= e($skill['title']) ?></span></h3><p><?= e($skill['text']) ?></p><?php tags($skill['items']); ?></article><?php endforeach; ?>
     </div></div>
   </section>
   <section class="section" id="erfahrung" aria-labelledby="experience-title">
-    <p class="section-label">03 / Erfahrung</p><div><h2 id="experience-title" class="heading-with-icon"><?= icon('briefcase') ?><span>Mein beruflicher Weg.</span></h2>
+    <p class="section-label">03 / <?= t($en, 'Erfahrung', 'Experience') ?></p><div><h2 id="experience-title" class="heading-with-icon"><?= icon('briefcase') ?><span><?= t($en, 'Mein beruflicher Weg.', 'My professional journey.') ?></span></h2>
     <?php foreach ($profile['experience'] as $entry): ?><article class="entry"><p class="meta"><?= e($entry['date']) ?></p><h3><?= e($entry['company']) ?></h3><p class="role"><?= e($entry['role']) ?></p><?php foreach ($entry['paragraphs'] as $paragraph): ?><p><?= e($paragraph) ?></p><?php endforeach; ?></article><?php endforeach; ?>
-    <article class="entry"><h3>Vor der Softwareentwicklung</h3><?php foreach ($profile['earlierExperience'] as $paragraph): ?><p><?= e($paragraph) ?></p><?php endforeach; ?></article></div>
+    <article class="entry"><h3><?= t($en, 'Vor der Softwareentwicklung', 'Before software development') ?></h3><?php foreach ($profile['earlierExperience'] as $paragraph): ?><p><?= e($paragraph) ?></p><?php endforeach; ?></article></div>
   </section>
   <section class="section" id="projekte" aria-labelledby="projects-title">
-    <p class="section-label">04 / Projekte</p><div><h2 id="projects-title" class="heading-with-icon"><?= icon('folder') ?><span>Arbeit, an der ich mitgewirkt habe.</span></h2><div class="project-grid">
-    <?php foreach ($profile['projects'] as $project): ?><article class="project <?= e($project['tone']) ?>"><div class="project-cover"><div class="project-cover-top"><span><?= e($project['n']) ?> / <?= e($project['kind']) ?></span><?php if (!empty($project['status'])): ?><strong class="project-status"><?= e($project['status']) ?></strong><?php endif; ?></div><h3><?= e($project['name']) ?></h3></div><div class="project-copy"><p class="meta"><?= e($project['company']) ?></p><p><?= e($project['text']) ?></p><?php tags($project['tags']); ?><?php if (!empty($project['links'])): ?><div class="project-links"><?php foreach ($project['links'] as $link): ?><a class="project-link icon-link" href="<?= e($link['href']) ?>"<?= !empty($link['newTab']) ? ' target="_blank" rel="noopener noreferrer"' : '' ?>><?= e($link['label']) ?><?= icon(!empty($link['newTab']) ? 'arrow-up-right' : 'arrow-right') ?><?php if (!empty($link['newTab'])): ?><span class="sr-only"> (öffnet einen neuen Tab)</span><?php endif; ?></a><?php endforeach; ?></div><?php endif; ?></div></article><?php endforeach; ?>
+    <p class="section-label">04 / <?= t($en, 'Projekte', 'Projects') ?></p><div><h2 id="projects-title" class="heading-with-icon"><?= icon('folder') ?><span><?= t($en, 'Arbeit, an der ich mitgewirkt habe.', 'Work I have contributed to.') ?></span></h2><div class="project-grid">
+    <?php foreach ($profile['projects'] as $project): ?><article class="project <?= e($project['tone']) ?>"><div class="project-cover"><div class="project-cover-top"><span><?= e($project['n']) ?> / <?= e($project['kind']) ?></span><?php if (!empty($project['status'])): ?><strong class="project-status"><?= e($project['status']) ?></strong><?php endif; ?></div><h3><?= e($project['name']) ?></h3></div><div class="project-copy"><p class="meta"><?= e($project['company']) ?></p><p><?= e($project['text']) ?></p><?php tags($project['tags']); ?><?php if (!empty($project['links'])): ?><div class="project-links"><?php foreach ($project['links'] as $link): ?><a class="project-link icon-link" href="<?= e($link['href']) ?>"<?= !empty($link['newTab']) ? ' target="_blank" rel="noopener noreferrer"' : '' ?>><?= e($link['label']) ?><?= icon(!empty($link['newTab']) ? 'arrow-up-right' : 'arrow-right') ?><?php if (!empty($link['newTab'])): ?><span class="sr-only"> (<?= t($en, 'öffnet einen neuen Tab', 'opens in a new tab') ?>)</span><?php endif; ?></a><?php endforeach; ?></div><?php endif; ?></div></article><?php endforeach; ?>
     </div></div>
   </section>
   <section class="section dark" id="ai" aria-labelledby="ai-title">
-    <p class="section-label">05 / KI & Entwicklung</p><div><h2 id="ai-title" class="heading-with-icon"><?= icon('cpu') ?><span><?= e($profile['ai']['title']) ?></span></h2><?php foreach ($profile['ai']['paragraphs'] as $paragraph): ?><p class="copy"><?= e($paragraph) ?></p><?php endforeach; ?><?php tags($profile['ai']['tools']); ?><p class="note"><?= e($profile['ai']['note']) ?></p></div>
+    <p class="section-label">05 / <?= t($en, 'KI & Entwicklung', 'AI & development') ?></p><div><h2 id="ai-title" class="heading-with-icon"><?= icon('cpu') ?><span><?= e($profile['ai']['title']) ?></span></h2><?php foreach ($profile['ai']['paragraphs'] as $paragraph): ?><p class="copy"><?= e($paragraph) ?></p><?php endforeach; ?><?php tags($profile['ai']['tools']); ?><p class="note"><?= e($profile['ai']['note']) ?></p></div>
   </section>
   <section class="section" id="ausbildung" aria-labelledby="education-title">
-    <p class="section-label">06 / Ausbildung</p><div><h2 id="education-title" class="heading-with-icon"><?= icon('graduation') ?><span>Fundament & Perspektive.</span></h2><?php foreach ($profile['education'] as $entry): ?><article class="entry"><p class="meta"><?= e($entry['date']) ?></p><h3><?= e($entry['title']) ?></h3><?php if (isset($entry['text'])): ?><p><?= e($entry['text']) ?></p><?php endif; ?></article><?php endforeach; ?></div>
+    <p class="section-label">06 / <?= t($en, 'Ausbildung', 'Education') ?></p><div><h2 id="education-title" class="heading-with-icon"><?= icon('graduation') ?><span><?= t($en, 'Fundament & Perspektive.', 'Foundation & perspective.') ?></span></h2><?php foreach ($profile['education'] as $entry): ?><article class="entry"><p class="meta"><?= e($entry['date']) ?></p><h3><?= e($entry['title']) ?></h3><?php if (isset($entry['text'])): ?><p><?= e($entry['text']) ?></p><?php endif; ?></article><?php endforeach; ?></div>
   </section>
   <section class="section green" id="persoenlich" aria-labelledby="personal-title">
-    <p class="section-label">07 / Persönlich</p><div><h2 id="personal-title" class="heading-with-icon"><?= icon('heart') ?><span><?= e($profile['personal']['title']) ?></span></h2><p class="copy"><?= e($profile['personal']['text']) ?></p><?php tags($profile['personal']['interests']); ?><p class="note"><?= e($profile['personal']['born']) ?><br><?= e($profile['personal']['languages']) ?></p></div>
+    <p class="section-label">07 / <?= t($en, 'Persönlich', 'Personal') ?></p><div><h2 id="personal-title" class="heading-with-icon"><?= icon('heart') ?><span><?= e($profile['personal']['title']) ?></span></h2><p class="copy"><?= e($profile['personal']['text']) ?></p><?php tags($profile['personal']['interests']); ?><p class="note"><?= e($profile['personal']['born']) ?><br><?= e($profile['personal']['languages']) ?></p></div>
   </section>
   <section class="section contact" id="kontakt" aria-labelledby="contact-title">
-    <p class="section-label">08 / Kontakt</p><div><h2 id="contact-title" class="heading-with-icon"><?= icon('mail') ?><span><?= e($profile['contact']['title']) ?></span></h2><p class="copy"><?= e($profile['contact']['text']) ?></p><a class="email icon-link" href="mailto:<?= e($identity['email']) ?>"><?= icon('mail') ?><span><?= e($identity['email']) ?></span></a><div class="actions"><a class="icon-link" href="<?= e($identity['githubUrl']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('git') ?>GitHub<?= icon('arrow-up-right') ?><span class="sr-only"> (öffnet einen neuen Tab)</span></a><a class="icon-link" href="#start">Zurück zum Anfang<?= icon('arrow-up-right') ?></a></div><div class="document-links" aria-label="Dokumente zum Download"><?php foreach ($profile['documents'] as $document): ?><a href="<?= e($document['href']) ?>" download><span><strong><?= e($document['label']) ?></strong><small><?= e($document['detail']) ?></small></span><?= icon('download') ?></a><?php endforeach; ?><a class="document-request" href="<?= e($profile['documentRequest']['href']) ?>"><span><strong><?= e($profile['documentRequest']['label']) ?></strong><small><?= e($profile['documentRequest']['detail']) ?></small></span><?= icon('mail') ?></a></div></div>
+    <p class="section-label">08 / <?= t($en, 'Kontakt', 'Contact') ?></p><div><h2 id="contact-title" class="heading-with-icon"><?= icon('mail') ?><span><?= e($profile['contact']['title']) ?></span></h2><p class="copy"><?= e($profile['contact']['text']) ?></p><a class="email icon-link" href="mailto:<?= e($identity['email']) ?>"><?= icon('mail') ?><span><?= e($identity['email']) ?></span></a><div class="actions"><a class="icon-link" href="<?= e($identity['githubUrl']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('git') ?>GitHub<?= icon('arrow-up-right') ?><span class="sr-only"> (<?= t($en, 'öffnet einen neuen Tab', 'opens in a new tab') ?>)</span></a><a class="icon-link" href="#start"><?= t($en, 'Zurück zum Anfang', 'Back to top') ?><?= icon('arrow-up-right') ?></a></div><div class="document-links" aria-label="<?= t($en, 'Dokumente zum Download', 'Documents to download') ?>"><?php foreach ($profile['documents'] as $document): ?><a href="<?= e($document['href']) ?>" download><span><strong><?= e($document['label']) ?></strong><small><?= e($document['detail']) ?></small></span><?= icon('download') ?></a><?php endforeach; ?><a class="document-request" href="<?= e($profile['documentRequest']['href']) ?>"><span><strong><?= e($profile['documentRequest']['label']) ?></strong><small><?= e($profile['documentRequest']['detail']) ?></small></span><?= icon('mail') ?></a></div></div>
   </section>
 </main>
-<footer class="footer"><span><?= e($identity['name']) ?> · <?= e($identity['location']) ?></span><span>Mit Verstand. Und Persönlichkeit.</span></footer>
+<footer class="footer"><span><?= e($identity['name']) ?> · <?= e($identity['location']) ?></span><span><?= t($en, 'Mit Verstand. Und Persönlichkeit.', 'With purpose. And personality.') ?></span></footer>
 </body>
 </html>

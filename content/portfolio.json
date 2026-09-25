@@ -1,295 +1,581 @@
 {
-  "identity": {
-    "name": "Wolfgang Siegert",
-    "location": "Leipzig, Deutschland",
-    "role": "Frontend Developer",
-    "email": "WoSiegert@hotmail.com",
-    "githubUrl": "https://github.com/WolfgangSiegert"
-  },
-  "documents": [
-    {
-      "label": "Frontend-Profil",
-      "detail": "Öffentliche Version · 2 Seiten",
-      "href": "downloads/wolfgang-siegert-frontend-developer.pdf?v=e66f187a076c"
+  "de": {
+    "identity": {
+      "name": "Wolfgang Siegert",
+      "location": "Leipzig, Deutschland",
+      "role": "Frontend Developer",
+      "email": "WoSiegert@hotmail.com",
+      "githubUrl": "https://github.com/WolfgangSiegert"
     },
-    {
-      "label": "Kurzprofil & Lebenslauf",
-      "detail": "Öffentliche Version · 2 Seiten",
-      "href": "downloads/wolfgang-siegert-kurzprofil-lebenslauf.pdf?v=7aa938098fc3"
-    }
-  ],
-  "documentRequest": {
-    "label": "Lebenslauf & Nachweise anfragen",
-    "detail": "Vollständiger Lebenslauf, Arbeitszeugnisse und Zertifikate per E-Mail",
-    "href": "mailto:WoSiegert@hotmail.com?subject=Anfrage%20zu%20Lebenslauf%2C%20Arbeitszeugnissen%20und%20Zertifikaten"
-  },
-  "hero": {
-    "title": "Frontend.",
-    "accent": "Mit Verstand.",
-    "after": "Und Persönlichkeit.",
-    "text": "Ich bin Wolfgang. Frontend Developer mit Fokus auf Vue, Nuxt und TypeScript. Ich entwickle Webanwendungen und suche Lösungen, die im Alltag einen Unterschied machen.",
-    "craft": [
-      "Vue",
-      "Nuxt",
-      "TypeScript"
+    "documents": [
+      {
+        "label": "Frontend-Profil",
+        "detail": "Öffentliche Version · 2 Seiten",
+        "href": "downloads/wolfgang-siegert-frontend-developer.pdf?v=e66f187a076c"
+      },
+      {
+        "label": "Kurzprofil & Lebenslauf",
+        "detail": "Öffentliche Version · 2 Seiten",
+        "href": "downloads/wolfgang-siegert-kurzprofil-lebenslauf.pdf?v=7aa938098fc3"
+      }
     ],
-    "statement": "Struktur im Code. Menschen im Blick.",
-    "traits": "Entwickler. Teamplayer. Familienmensch."
-  },
-  "about": {
-    "title": "Gute Entwicklung beginnt mit Verstehen.",
-    "paragraphs": [
-      "Mein Weg in die Softwareentwicklung war eine bewusste Entscheidung. Aus der Arbeit mit Sprache und Menschen ging es über eine Ausbildung im Microsoft-ERP-Umfeld zur Entwicklung moderner Webanwendungen.",
-      "Ich tausche mich gern über Aufgaben und Probleme aus. Mir sind Lösungen wichtig, deren Mehrwert in einem gesunden Verhältnis zum Aufwand steht. Mein Schwerpunkt ist das Frontend – und meine Neugier hört dort nicht auf."
-    ],
-    "facts": [
-      "Vue & Nuxt im Fokus",
-      "Erfahrung mit Web & ERP",
-      "Freude am Weiterlernen"
-    ]
-  },
-  "skills": [
-    {
-      "number": "01",
-      "title": "Frontend",
-      "text": "Mein Schwerpunkt: Webanwendungen und ihre Oberflächen.",
-      "items": [
-        "Vue 2 & 3",
+    "documentRequest": {
+      "label": "Lebenslauf & Nachweise anfragen",
+      "detail": "Vollständiger Lebenslauf, Arbeitszeugnisse und Zertifikate per E-Mail",
+      "href": "mailto:WoSiegert@hotmail.com?subject=Anfrage%20zu%20Lebenslauf%2C%20Arbeitszeugnissen%20und%20Zertifikaten"
+    },
+    "hero": {
+      "title": "Frontend.",
+      "accent": "Mit Verstand.",
+      "after": "Und Persönlichkeit.",
+      "text": "Ich bin Wolfgang. Frontend Developer mit Fokus auf Vue, Nuxt und TypeScript. Ich entwickle Webanwendungen und suche Lösungen, die im Alltag einen Unterschied machen.",
+      "craft": [
+        "Vue",
         "Nuxt",
-        "TypeScript",
-        "JavaScript",
-        "HTML & CSS",
-        "Tailwind CSS"
+        "TypeScript"
+      ],
+      "statement": "Struktur im Code. Menschen im Blick.",
+      "traits": "Entwickler. Teamplayer. Familienmensch."
+    },
+    "about": {
+      "title": "Gute Entwicklung beginnt mit Verstehen.",
+      "paragraphs": [
+        "Mein Weg in die Softwareentwicklung war eine bewusste Entscheidung. Aus der Arbeit mit Sprache und Menschen ging es über eine Ausbildung im Microsoft-ERP-Umfeld zur Entwicklung moderner Webanwendungen.",
+        "Ich tausche mich gern über Aufgaben und Probleme aus. Mir sind Lösungen wichtig, deren Mehrwert in einem gesunden Verhältnis zum Aufwand steht. Mein Schwerpunkt ist das Frontend – und meine Neugier hört dort nicht auf."
+      ],
+      "facts": [
+        "Vue & Nuxt im Fokus",
+        "Erfahrung mit Web & ERP",
+        "Freude am Weiterlernen"
       ]
     },
-    {
-      "number": "02",
-      "title": "Architektur & Tooling",
-      "text": "Werkzeuge für Komponenten, State und Entwicklung.",
-      "items": [
-        "Vite",
-        "Pinia / Vuex",
-        "Node.js",
-        "npm / pnpm",
-        "REST-APIs"
+    "skills": [
+      {
+        "number": "01",
+        "title": "Frontend",
+        "text": "Mein Schwerpunkt: Webanwendungen und ihre Oberflächen.",
+        "items": [
+          "Vue 2 & 3",
+          "Nuxt",
+          "TypeScript",
+          "JavaScript",
+          "HTML & CSS",
+          "Tailwind CSS"
+        ]
+      },
+      {
+        "number": "02",
+        "title": "Architektur & Tooling",
+        "text": "Werkzeuge für Komponenten, State und Entwicklung.",
+        "items": [
+          "Vite",
+          "Pinia / Vuex",
+          "Node.js",
+          "npm / pnpm",
+          "REST-APIs"
+        ]
+      },
+      {
+        "number": "03",
+        "title": "Qualität & Zusammenarbeit",
+        "text": "Testen, abstimmen und gemeinsam weiterentwickeln.",
+        "items": [
+          "Playwright",
+          "Vitest",
+          "Git",
+          "Bitbucket / GitLab",
+          "Jira / Confluence",
+          "Scrum"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "n": "01",
+        "name": "edoobox",
+        "kind": "Produktweiterentwicklung",
+        "company": "Etzensperger Informatik AG · 2024–2026",
+        "text": "Mitarbeit an der Weiterentwicklung von edoobox sowie an Kundenprojekten.",
+        "tags": [
+          "Webanwendung",
+          "Produktentwicklung"
+        ],
+        "tone": "blue",
+        "links": [
+          {
+            "href": "https://www.edoobox.com/de/",
+            "label": "edoobox ansehen",
+            "newTab": true
+          }
+        ]
+      },
+      {
+        "n": "02",
+        "name": "propoints",
+        "kind": "Web-App & Admin-Backend",
+        "company": "LeanERA · 2021–2023",
+        "text": "Mitwirkung an propoints und ZF propoints im Rahmen der Webentwicklung bei LeanERA.",
+        "tags": [
+          "Web-App",
+          "Administration"
+        ],
+        "tone": "ice",
+        "links": [
+          {
+            "href": "https://www.propoints.com/de/de",
+            "label": "propoints ansehen",
+            "newTab": true
+          }
+        ]
+      },
+      {
+        "n": "03",
+        "name": "roto profiliga",
+        "kind": "Progressive Web App",
+        "company": "LeanERA · 2021–2023",
+        "text": "Mitwirkung an einer Progressive Web App und dem zugehörigen Admin-Backend.",
+        "tags": [
+          "PWA",
+          "Administration"
+        ],
+        "tone": "lime",
+        "links": [
+          {
+            "href": "https://www.roto-frank.com/de/profiliga",
+            "label": "ProfiLiga ansehen",
+            "newTab": true
+          }
+        ]
+      },
+      {
+        "n": "04",
+        "name": "mindcleanse & sani-kid",
+        "kind": "Mobile Anwendungen",
+        "company": "LeanERA · 2021–2023",
+        "text": "Mitwirkung an mobilen Apps und ihren Admin-Backends.",
+        "tags": [
+          "Mobile Apps",
+          "Administration"
+        ],
+        "tone": "ink",
+        "links": [
+          {
+            "href": "https://apps.apple.com/de/app/mindcleanse-bewusstseinscoach/id6443706321",
+            "label": "MINDCLEANSE App ansehen",
+            "newTab": true
+          },
+          {
+            "href": "https://www.sani-kid.de/",
+            "label": "Sani Kid ansehen",
+            "newTab": true
+          }
+        ]
+      },
+      {
+        "n": "05",
+        "name": "LERN-Bank · Mein Geldautomat",
+        "kind": "Laravel Showcase",
+        "company": "Eigenes Lernprojekt · 2026",
+        "text": "Eine öffentlich zugängliche Geldautomaten-Simulation mit Laravel, Vue, TypeScript und Inertia. Das Projekt zeigt Geschäftsregeln, Transaktionen, Tests und einen produktionsnahen Betrieb.",
+        "tags": [
+          "Laravel",
+          "Vue 3",
+          "TypeScript",
+          "PostgreSQL"
+        ],
+        "tone": "atm",
+        "links": [
+          {
+            "href": "../atm/",
+            "label": "Lernbank ausprobieren",
+            "newTab": true
+          }
+        ]
+      },
+      {
+        "n": "06",
+        "name": "JoinSplit",
+        "kind": "Local-first Web-App",
+        "company": "Eigenes Projekt · in Entwicklung · 2026",
+        "text": "Mobile-first Webanwendung für kleine Gruppen: gemeinsame Ausgaben erfassen, gleichmäßig aufteilen, Salden nachvollziehen und Ausgleichszahlungen ableiten.",
+        "tags": [
+          "Nuxt",
+          "Vue 3",
+          "TypeScript",
+          "Laravel",
+          "PostgreSQL",
+          "Playwright"
+        ],
+        "tone": "violet",
+        "status": "Coming soon",
+        "links": [
+          {
+            "href": "https://github.com/WolfgangSiegert/JoinSplit",
+            "label": "Projekt auf GitHub",
+            "newTab": true
+          }
+        ]
+      }
+    ],
+    "experience": [
+      {
+        "date": "01/2024 – 07/2026",
+        "company": "Etzensperger Informatik AG",
+        "role": "Webentwicklung",
+        "paragraphs": [
+          "Kundenprojekte und Mitarbeit an der Produktweiterentwicklung von edoobox."
+        ]
+      },
+      {
+        "date": "01/2021 – 10/2023",
+        "company": "LeanERA GmbH",
+        "role": "Webentwickler · Leipzig",
+        "paragraphs": [
+          "Frontend- und App-Entwicklung mit TypeScript, Vue 3, Nuxt 3, Tailwind CSS, Ionic und Capacitor. Frontend-Testing mit Playwright.",
+          "Zusammenarbeit im cross-funktionalen Scrum-Team, Unterstützung bei CI/CD und Versionsverwaltung sowie Abstimmung mit UX/UI und Kundenmanagement."
+        ]
+      },
+      {
+        "date": "08/2015 – 10/2019",
+        "company": "M+P Solutions",
+        "role": "Anwendungsentwickler · Leipzig",
+        "paragraphs": [
+          "Anforderungsanalysen und technische Spezifikationen für Microsoft Dynamics NAV, Evaluierung von Anpassungen, RDLC-Dokumente sowie 1st- und 2nd-Level-Support."
+        ]
+      }
+    ],
+    "earlierExperience": [
+      "02/2013 – 07/2015: Freiberuflicher Lehrer für Deutsch als Fremdsprache, Leipzig.",
+      "10/2008 – 08/2013: Referent im Bereich Deutsch bei Mobilee e.V., Leipzig."
+    ],
+    "ai": {
+      "title": "Neue Werkzeuge. Eigener Kopf.",
+      "paragraphs": [
+        "ChatGPT, Codex und GitHub Copilot gehören zu meinem Werkzeugkasten für KI-unterstützte Entwicklung.",
+        "Mein Anspruch dabei: Vorschläge verstehen, kritisch prüfen und die Verantwortung für den eigenen Code behalten."
+      ],
+      "tools": [
+        "ChatGPT",
+        "Codex",
+        "GitHub Copilot"
+      ],
+      "note": "Unterstützung im Entwicklungsprozess. Qualität bleibt eine bewusste Entscheidung."
+    },
+    "education": [
+      {
+        "date": "08/2015 – 06/2018 · M+P Solutions, Leipzig",
+        "title": "Fachinformatiker für Anwendungsentwicklung",
+        "text": "IHK-Gesamtergebnis gut (88 Punkte), Berufsschulnote sehr gut (1,3)"
+      },
+      {
+        "date": "10/2005 – 09/2013 · Universität Leipzig",
+        "title": "Deutsch als Fremdsprache & Lusitanistik",
+        "text": "Magisterstudium mit bestandener Zwischenprüfung, ohne Magisterabschluss. Studienaufenthalte in Lissabon und São Paulo."
+      },
+      {
+        "date": "2001 · Robert-Schumann-Gymnasium, Leipzig",
+        "title": "Abitur"
+      }
+    ],
+    "personal": {
+      "title": "Auch abseits des Bildschirms.",
+      "text": "Leipzig ist mein Zuhause. Ich lebe in einer festen Partnerschaft und bin Vater von drei Kindern.",
+      "born": "Geboren am 02.02.1983",
+      "languages": "Sprachen: Deutsch, Englisch, Portugiesisch, Spanisch und Französisch",
+      "interests": [
+        "Heimwerken",
+        "Zeichnen",
+        "Tischtennis",
+        "Fußball"
       ]
     },
-    {
-      "number": "03",
-      "title": "Qualität & Zusammenarbeit",
-      "text": "Testen, abstimmen und gemeinsam weiterentwickeln.",
-      "items": [
-        "Playwright",
-        "Vitest",
-        "Git",
-        "Bitbucket / GitLab",
-        "Jira / Confluence",
-        "Scrum"
-      ]
+    "contact": {
+      "title": "Eine gute Zusammenarbeit beginnt mit einem Hallo.",
+      "text": "Über Aufgaben, Ideen und eine mögliche Zusammenarbeit spreche ich gern persönlich."
     }
-  ],
-  "projects": [
-    {
-      "n": "01",
-      "name": "edoobox",
-      "kind": "Produktweiterentwicklung",
-      "company": "Etzensperger Informatik AG · 2024–2026",
-      "text": "Mitarbeit an der Weiterentwicklung von edoobox sowie an Kundenprojekten.",
-      "tags": [
-        "Webanwendung",
-        "Produktentwicklung"
-      ],
-      "tone": "blue",
-      "links": [
-        {
-          "href": "https://www.edoobox.com/de/",
-          "label": "edoobox ansehen",
-          "newTab": true
-        }
-      ]
+  },
+  "en": {
+    "identity": {
+      "name": "Wolfgang Siegert",
+      "location": "Leipzig, Germany",
+      "role": "Frontend Developer",
+      "email": "WoSiegert@hotmail.com",
+      "githubUrl": "https://github.com/WolfgangSiegert"
     },
-    {
-      "n": "02",
-      "name": "propoints",
-      "kind": "Web-App & Admin-Backend",
-      "company": "LeanERA · 2021–2023",
-      "text": "Mitwirkung an propoints und ZF propoints im Rahmen der Webentwicklung bei LeanERA.",
-      "tags": [
-        "Web-App",
-        "Administration"
-      ],
-      "tone": "ice",
-      "links": [
-        {
-          "href": "https://www.propoints.com/de/de",
-          "label": "propoints ansehen",
-          "newTab": true
-        }
-      ]
+    "documents": [],
+    "documentRequest": {
+      "label": "Request CV & certificates",
+      "detail": "Full CV, references and certificates by email",
+      "href": "mailto:WoSiegert@hotmail.com?subject=Request%20for%20CV%2C%20references%20and%20certificates"
     },
-    {
-      "n": "03",
-      "name": "roto profiliga",
-      "kind": "Progressive Web App",
-      "company": "LeanERA · 2021–2023",
-      "text": "Mitwirkung an einer Progressive Web App und dem zugehörigen Admin-Backend.",
-      "tags": [
-        "PWA",
-        "Administration"
-      ],
-      "tone": "lime",
-      "links": [
-        {
-          "href": "https://www.roto-frank.com/de/profiliga",
-          "label": "ProfiLiga ansehen",
-          "newTab": true
-        }
-      ]
-    },
-    {
-      "n": "04",
-      "name": "mindcleanse & sani-kid",
-      "kind": "Mobile Anwendungen",
-      "company": "LeanERA · 2021–2023",
-      "text": "Mitwirkung an mobilen Apps und ihren Admin-Backends.",
-      "tags": [
-        "Mobile Apps",
-        "Administration"
-      ],
-      "tone": "ink",
-      "links": [
-        {
-          "href": "https://apps.apple.com/de/app/mindcleanse-bewusstseinscoach/id6443706321",
-          "label": "MINDCLEANSE App ansehen",
-          "newTab": true
-        },
-        {
-          "href": "https://www.sani-kid.de/",
-          "label": "Sani Kid ansehen",
-          "newTab": true
-        }
-      ]
-    },
-    {
-      "n": "05",
-      "name": "LERN-Bank · Mein Geldautomat",
-      "kind": "Laravel Showcase",
-      "company": "Eigenes Lernprojekt · 2026",
-      "text": "Eine öffentlich zugängliche Geldautomaten-Simulation mit Laravel, Vue, TypeScript und Inertia. Das Projekt zeigt Geschäftsregeln, Transaktionen, Tests und einen produktionsnahen Betrieb.",
-      "tags": [
-        "Laravel",
-        "Vue 3",
-        "TypeScript",
-        "PostgreSQL"
-      ],
-      "tone": "atm",
-      "links": [
-        {
-          "href": "../atm/",
-          "label": "Lernbank ausprobieren",
-          "newTab": true
-        }
-      ]
-    },
-    {
-      "n": "06",
-      "name": "JoinSplit",
-      "kind": "Local-first Web-App",
-      "company": "Eigenes Projekt · in Entwicklung · 2026",
-      "text": "Mobile-first Webanwendung für kleine Gruppen: gemeinsame Ausgaben erfassen, gleichmäßig aufteilen, Salden nachvollziehen und Ausgleichszahlungen ableiten.",
-      "tags": [
+    "hero": {
+      "title": "Frontend.",
+      "accent": "With purpose.",
+      "after": "And personality.",
+      "text": "I’m Wolfgang, a frontend developer specialising in Vue, Nuxt and TypeScript. I build web applications and look for solutions that make a meaningful difference in everyday use.",
+      "craft": [
+        "Vue",
         "Nuxt",
-        "Vue 3",
-        "TypeScript",
-        "Laravel",
-        "PostgreSQL",
-        "Playwright"
+        "TypeScript"
       ],
-      "tone": "violet",
-      "status": "Coming soon",
-      "links": [
-        {
-          "href": "https://github.com/WolfgangSiegert/JoinSplit",
-          "label": "Projekt auf GitHub",
-          "newTab": true
-        }
-      ]
-    }
-  ],
-  "experience": [
-    {
-      "date": "01/2024 – 07/2026",
-      "company": "Etzensperger Informatik AG",
-      "role": "Webentwicklung",
+      "statement": "Structure in the code. People in mind.",
+      "traits": "Developer. Team player. Family person."
+    },
+    "about": {
+      "title": "Good development starts with understanding.",
       "paragraphs": [
-        "Kundenprojekte und Mitarbeit an der Produktweiterentwicklung von edoobox."
+        "Moving into software development was a deliberate choice. After working with language and people, I trained in the Microsoft ERP environment before moving on to modern web application development.",
+        "I enjoy discussing tasks and problems with others. I value solutions whose benefit is in a healthy proportion to the effort involved. My focus is frontend development – but my curiosity does not stop there."
+      ],
+      "facts": [
+        "Focused on Vue & Nuxt",
+        "Experience in web & ERP",
+        "Always keen to learn"
       ]
     },
-    {
-      "date": "01/2021 – 10/2023",
-      "company": "LeanERA GmbH",
-      "role": "Webentwickler · Leipzig",
-      "paragraphs": [
-        "Frontend- und App-Entwicklung mit TypeScript, Vue 3, Nuxt 3, Tailwind CSS, Ionic und Capacitor. Frontend-Testing mit Playwright.",
-        "Zusammenarbeit im cross-funktionalen Scrum-Team, Unterstützung bei CI/CD und Versionsverwaltung sowie Abstimmung mit UX/UI und Kundenmanagement."
-      ]
-    },
-    {
-      "date": "08/2015 – 10/2019",
-      "company": "M+P Solutions",
-      "role": "Anwendungsentwickler · Leipzig",
-      "paragraphs": [
-        "Anforderungsanalysen und technische Spezifikationen für Microsoft Dynamics NAV, Evaluierung von Anpassungen, RDLC-Dokumente sowie 1st- und 2nd-Level-Support."
-      ]
-    }
-  ],
-  "earlierExperience": [
-    "02/2013 – 07/2015: Freiberuflicher Lehrer für Deutsch als Fremdsprache, Leipzig.",
-    "10/2008 – 08/2013: Referent im Bereich Deutsch bei Mobilee e.V., Leipzig."
-  ],
-  "ai": {
-    "title": "Neue Werkzeuge. Eigener Kopf.",
-    "paragraphs": [
-      "ChatGPT, Codex und GitHub Copilot gehören zu meinem Werkzeugkasten für KI-unterstützte Entwicklung.",
-      "Mein Anspruch dabei: Vorschläge verstehen, kritisch prüfen und die Verantwortung für den eigenen Code behalten."
+    "skills": [
+      {
+        "number": "01",
+        "title": "Frontend",
+        "text": "My main focus: web applications and their interfaces.",
+        "items": [
+          "Vue 2 & 3",
+          "Nuxt",
+          "TypeScript",
+          "JavaScript",
+          "HTML & CSS",
+          "Tailwind CSS"
+        ]
+      },
+      {
+        "number": "02",
+        "title": "Architecture & tooling",
+        "text": "Tools for components, state management and development.",
+        "items": [
+          "Vite",
+          "Pinia / Vuex",
+          "Node.js",
+          "npm / pnpm",
+          "REST APIs"
+        ]
+      },
+      {
+        "number": "03",
+        "title": "Quality & collaboration",
+        "text": "Testing, aligning and improving together.",
+        "items": [
+          "Playwright",
+          "Vitest",
+          "Git",
+          "Bitbucket / GitLab",
+          "Jira / Confluence",
+          "Scrum"
+        ]
+      }
     ],
-    "tools": [
-      "ChatGPT",
-      "Codex",
-      "GitHub Copilot"
+    "projects": [
+      {
+        "n": "01",
+        "name": "edoobox",
+        "kind": "Product development",
+        "company": "Etzensperger Informatik AG · 2024–2026",
+        "text": "Contributed to the ongoing development of edoobox and to customer projects.",
+        "tags": [
+          "Web application",
+          "Product development"
+        ],
+        "tone": "blue",
+        "links": [
+          {
+            "href": "https://www.edoobox.com/en/",
+            "label": "View edoobox",
+            "newTab": true
+          }
+        ]
+      },
+      {
+        "n": "02",
+        "name": "propoints",
+        "kind": "Web app & admin backend",
+        "company": "LeanERA · 2021–2023",
+        "text": "Contributed to propoints and ZF propoints as part of the web development team at LeanERA.",
+        "tags": [
+          "Web app",
+          "Administration"
+        ],
+        "tone": "ice",
+        "links": [
+          {
+            "href": "https://www.propoints.com/de/de",
+            "label": "View propoints",
+            "newTab": true
+          }
+        ]
+      },
+      {
+        "n": "03",
+        "name": "roto profiliga",
+        "kind": "Progressive web app",
+        "company": "LeanERA · 2021–2023",
+        "text": "Contributed to a progressive web app and its associated admin backend.",
+        "tags": [
+          "PWA",
+          "Administration"
+        ],
+        "tone": "lime",
+        "links": [
+          {
+            "href": "https://www.roto-frank.com/en/profiliga",
+            "label": "View ProfiLiga",
+            "newTab": true
+          }
+        ]
+      },
+      {
+        "n": "04",
+        "name": "mindcleanse & sani-kid",
+        "kind": "Mobile applications",
+        "company": "LeanERA · 2021–2023",
+        "text": "Contributed to mobile apps and their admin backends.",
+        "tags": [
+          "Mobile apps",
+          "Administration"
+        ],
+        "tone": "ink",
+        "links": [
+          {
+            "href": "https://apps.apple.com/de/app/mindcleanse-bewusstseinscoach/id6443706321",
+            "label": "View MINDCLEANSE app",
+            "newTab": true
+          },
+          {
+            "href": "https://www.sani-kid.de/",
+            "label": "View Sani Kid",
+            "newTab": true
+          }
+        ]
+      },
+      {
+        "n": "05",
+        "name": "LEARNING Bank · My ATM",
+        "kind": "Laravel showcase",
+        "company": "Personal learning project · 2026",
+        "text": "A publicly accessible ATM simulation built with Laravel, Vue, TypeScript and Inertia. The project demonstrates business rules, transactions, tests and a production-like deployment.",
+        "tags": [
+          "Laravel",
+          "Vue 3",
+          "TypeScript",
+          "PostgreSQL"
+        ],
+        "tone": "atm",
+        "links": [
+          {
+            "href": "../atm/",
+            "label": "Try the learning bank",
+            "newTab": true
+          }
+        ]
+      },
+      {
+        "n": "06",
+        "name": "JoinSplit",
+        "kind": "Local-first web app",
+        "company": "Personal project · in development · 2026",
+        "text": "A mobile-first web application for small groups: record shared expenses, split them evenly, understand balances and determine settlement payments.",
+        "tags": [
+          "Nuxt",
+          "Vue 3",
+          "TypeScript",
+          "Laravel",
+          "PostgreSQL",
+          "Playwright"
+        ],
+        "tone": "violet",
+        "status": "Coming soon",
+        "links": [
+          {
+            "href": "https://github.com/WolfgangSiegert/JoinSplit",
+            "label": "Project on GitHub",
+            "newTab": true
+          }
+        ]
+      }
     ],
-    "note": "Unterstützung im Entwicklungsprozess. Qualität bleibt eine bewusste Entscheidung."
-  },
-  "education": [
-    {
-      "date": "08/2015 – 06/2018 · M+P Solutions, Leipzig",
-      "title": "Fachinformatiker für Anwendungsentwicklung",
-      "text": "IHK-Gesamtergebnis gut (88 Punkte), Berufsschulnote sehr gut (1,3)"
+    "experience": [
+      {
+        "date": "01/2024 – 07/2026",
+        "company": "Etzensperger Informatik AG",
+        "role": "Web development",
+        "paragraphs": [
+          "Customer projects and contributions to the ongoing development of edoobox."
+        ]
+      },
+      {
+        "date": "01/2021 – 10/2023",
+        "company": "LeanERA GmbH",
+        "role": "Web developer · Leipzig",
+        "paragraphs": [
+          "Frontend and app development with TypeScript, Vue 3, Nuxt 3, Tailwind CSS, Ionic and Capacitor. Frontend testing with Playwright.",
+          "Collaboration in a cross-functional Scrum team, support with CI/CD and version control, and coordination with UX/UI and customer management."
+        ]
+      },
+      {
+        "date": "08/2015 – 10/2019",
+        "company": "M+P Solutions",
+        "role": "Application developer · Leipzig",
+        "paragraphs": [
+          "Requirements analysis and technical specifications for Microsoft Dynamics NAV, evaluation of customisations, RDLC documents, and first- and second-level support."
+        ]
+      }
+    ],
+    "earlierExperience": [
+      "02/2013 – 07/2015: Freelance teacher of German as a foreign language, Leipzig.",
+      "10/2008 – 08/2013: German-language instructor at Mobilee e.V., Leipzig."
+    ],
+    "ai": {
+      "title": "New tools. Independent thinking.",
+      "paragraphs": [
+        "ChatGPT, Codex and GitHub Copilot are part of my toolkit for AI-assisted development.",
+        "My principle: understand suggestions, assess them critically and remain responsible for my own code."
+      ],
+      "tools": [
+        "ChatGPT",
+        "Codex",
+        "GitHub Copilot"
+      ],
+      "note": "Support in the development process. Quality remains a conscious decision."
     },
-    {
-      "date": "10/2005 – 09/2013 · Universität Leipzig",
-      "title": "Deutsch als Fremdsprache & Lusitanistik",
-      "text": "Magisterstudium mit bestandener Zwischenprüfung, ohne Magisterabschluss. Studienaufenthalte in Lissabon und São Paulo."
+    "education": [
+      {
+        "date": "08/2015 – 06/2018 · M+P Solutions, Leipzig",
+        "title": "IT specialist in application development",
+        "text": "German Chamber of Commerce (IHK) overall grade: good (88 points); vocational school grade: very good (1.3)"
+      },
+      {
+        "date": "10/2005 – 09/2013 · Leipzig University",
+        "title": "German as a Foreign Language & Lusophone Studies",
+        "text": "Magister programme; intermediate examination completed, no final Magister degree. Study periods in Lisbon and São Paulo."
+      },
+      {
+        "date": "2001 · Robert Schumann Gymnasium, Leipzig",
+        "title": "Abitur (German university entrance qualification)"
+      }
+    ],
+    "personal": {
+      "title": "Away from the screen, too.",
+      "text": "Leipzig is my home. I live with my long-term partner and am a father of three.",
+      "born": "Born on 2 February 1983",
+      "languages": "Languages: German, English, Portuguese, Spanish and French",
+      "interests": [
+        "DIY",
+        "Drawing",
+        "Table tennis",
+        "Football"
+      ]
     },
-    {
-      "date": "2001 · Robert-Schumann-Gymnasium, Leipzig",
-      "title": "Abitur"
+    "contact": {
+      "title": "Good collaboration starts with hello.",
+      "text": "I’m always happy to discuss tasks, ideas and potential collaboration in person."
     }
-  ],
-  "personal": {
-    "title": "Auch abseits des Bildschirms.",
-    "text": "Leipzig ist mein Zuhause. Ich lebe in einer festen Partnerschaft und bin Vater von drei Kindern.",
-    "born": "Geboren am 02.02.1983",
-    "languages": "Sprachen: Deutsch, Englisch, Portugiesisch, Spanisch und Französisch",
-    "interests": [
-      "Heimwerken",
-      "Zeichnen",
-      "Tischtennis",
-      "Fußball"
-    ]
-  },
-  "contact": {
-    "title": "Eine gute Zusammenarbeit beginnt mit einem Hallo.",
-    "text": "Über Aufgaben, Ideen und eine mögliche Zusammenarbeit spreche ich gern persönlich."
   }
 }
