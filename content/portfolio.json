@@ -196,10 +196,10 @@
         "n": "06",
         "name": "JoinSplit",
         "kind": "Local-first Web-App",
-        "company": "Eigenes Projekt · in Entwicklung · 2026",
-        "text": "Mobile-first Webanwendung für kleine Gruppen: gemeinsame Ausgaben erfassen, gleichmäßig aufteilen, Salden nachvollziehen und Ausgleichszahlungen ableiten.",
+        "company": "Eigenes Projekt · Release Candidate · 2026",
+        "text": "Mobile-first Portfolio-Demo für kleine Gruppen: Ausgaben gleichmäßig aufteilen, Salden nachvollziehen und Ausgleichszahlungen ableiten. Lokaler Workflow mit wartender Synchronisierung, Laravel-API und deterministische Finanzlogik mit automatisierten Accessibility-Checks.",
         "tags": [
-          "Nuxt",
+          "Nuxt 4",
           "Vue 3",
           "TypeScript",
           "Laravel",
@@ -207,11 +207,16 @@
           "Playwright"
         ],
         "tone": "violet",
-        "status": "Coming soon",
+        "status": "Release candidate",
         "links": [
           {
+            "href": "https://joinsplit.tiny-bits.org",
+            "label": "Demo nach Deployment",
+            "newTab": true
+          },
+          {
             "href": "https://github.com/WolfgangSiegert/JoinSplit",
-            "label": "Projekt auf GitHub",
+            "label": "Quellcode auf GitHub",
             "newTab": true
           }
         ]
@@ -491,10 +496,10 @@
         "n": "06",
         "name": "JoinSplit",
         "kind": "Local-first web app",
-        "company": "Personal project · in development · 2026",
-        "text": "A mobile-first web application for small groups: record shared expenses, split them evenly, understand balances and determine settlement payments.",
+        "company": "Personal project · release candidate · 2026",
+        "text": "A mobile-first portfolio demo for small groups: split expenses evenly, understand balances, and derive settlement payments. It combines a local workflow with queued synchronization, a Laravel API, deterministic financial logic, and automated accessibility checks.",
         "tags": [
-          "Nuxt",
+          "Nuxt 4",
           "Vue 3",
           "TypeScript",
           "Laravel",
@@ -502,11 +507,16 @@
           "Playwright"
         ],
         "tone": "violet",
-        "status": "Coming soon",
+        "status": "Release candidate",
         "links": [
           {
+            "href": "https://joinsplit.tiny-bits.org",
+            "label": "Demo after deployment",
+            "newTab": true
+          },
+          {
             "href": "https://github.com/WolfgangSiegert/JoinSplit",
-            "label": "Project on GitHub",
+            "label": "Source on GitHub",
             "newTab": true
           }
         ]
