@@ -164,13 +164,14 @@ $sections = $en
     const navigation = document.querySelector('.section-nav');
     const brand = document.querySelector('.section-nav-brand');
     const header = document.querySelector('.header');
+    const headerLanguageSwitch = header?.querySelector('.language-switch');
     const hero = document.querySelector('.hero');
     const context = document.querySelector('.section-context');
     const contextLabel = context?.querySelector('span');
     const contextTitle = context?.querySelector('strong');
     const sections = [...document.querySelectorAll('.section')];
     const sectionLinks = [...navigation.querySelectorAll('a[href^="#"]:not(.section-nav-brand)')];
-    if (!sentinel || !navigation || !brand || !header || !hero || !context || !contextLabel || !contextTitle) return;
+    if (!sentinel || !navigation || !brand || !header || !headerLanguageSwitch || !hero || !context || !contextLabel || !contextTitle) return;
 
     let frame = 0;
     let activeSection = null;
@@ -192,12 +193,15 @@ $sections = $en
         }
       });
 
-      const passedSections = navigation.classList.contains('is-stuck')
-        ? sections.filter((section) => section.querySelector('h2')?.getBoundingClientRect().top <= navigationBottom)
-        : [];
-      const nextActiveSection = passedSections.at(-1) || null;
+      const nextActiveSection = navigation.classList.contains('is-stuck') ? visibleSection : null;
+      const nextTitle = nextActiveSection?.querySelector('h2') || null;
 
-      if (!nextActiveSection || nextActiveSection.getBoundingClientRect().bottom <= navigationBottom) {
+      if (
+        !nextActiveSection
+        || !nextTitle
+        || nextTitle.getBoundingClientRect().top > navigationBottom
+        || nextActiveSection.getBoundingClientRect().bottom <= navigationBottom
+      ) {
         context.classList.remove('is-visible');
         activeSection = null;
         return;
@@ -205,13 +209,12 @@ $sections = $en
 
       if (nextActiveSection !== activeSection) {
         const label = nextActiveSection.querySelector(':scope > .section-label');
-        const title = nextActiveSection.querySelector('h2');
         const sectionStyle = getComputedStyle(nextActiveSection);
         const rootStyle = getComputedStyle(document.documentElement);
         const transparent = sectionStyle.backgroundColor === 'rgba(0, 0, 0, 0)';
 
         contextLabel.textContent = label?.textContent?.trim() || '';
-        contextTitle.textContent = title?.textContent?.trim() || '';
+        contextTitle.textContent = nextTitle.textContent?.trim() || '';
         context.style.setProperty('--section-context-bg', transparent ? rootStyle.backgroundColor : sectionStyle.backgroundColor);
         context.style.setProperty('--section-context-color', sectionStyle.color);
         activeSection = nextActiveSection;
@@ -276,6 +279,11 @@ $sections = $en
       setStickyState(!entry.isIntersecting && entry.boundingClientRect.top < 0);
     });
     observer.observe(sentinel);
+
+    const languageObserver = new IntersectionObserver(([entry]) => {
+      navigation.classList.toggle('show-language-switch', !entry.isIntersecting);
+    });
+    languageObserver.observe(headerLanguageSwitch);
 
     const resizeObserver = new ResizeObserver(updateStickyMetrics);
     resizeObserver.observe(navigation);
