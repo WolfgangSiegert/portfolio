@@ -23,6 +23,7 @@ copy($root . '/public/assets/portfolio.css', $output . '/assets/portfolio.css');
 copy($root . '/public/assets/wolfgang-siegert-portrait.jpg', $output . '/assets/wolfgang-siegert-portrait.jpg');
 copy($root . '/public/assets/projects/lern-bank.jpg', $output . '/assets/projects/lern-bank.jpg');
 copy($root . '/public/assets/projects/joinsplit.jpg', $output . '/assets/projects/joinsplit.jpg');
+copy($root . '/public/assets/projects/joinsplit-icon.svg', $output . '/assets/projects/joinsplit-icon.svg');
 copy($root . '/public/downloads/wolfgang-siegert-frontend-developer.pdf', $output . '/downloads/wolfgang-siegert-frontend-developer.pdf');
 copy($root . '/public/downloads/wolfgang-siegert-kurzprofil-lebenslauf.pdf', $output . '/downloads/wolfgang-siegert-kurzprofil-lebenslauf.pdf');
 copy($root . '/public/downloads/wolfgang-siegert-frontend-developer-en.pdf', $output . '/downloads/wolfgang-siegert-frontend-developer-en.pdf');
