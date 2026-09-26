@@ -94,7 +94,7 @@ $sections = $en
 <body>
 <a class="skip" href="#inhalt"><?= t($en, 'Zum Inhalt springen', 'Skip to content') ?></a>
 <header class="header">
-  <div class="brand-cluster"><a class="brand" href="#start" aria-label="<?= e($identity['name']) ?> – <?= t($en, 'Start', 'Home') ?>">ws<span>.</span></a><a class="site-home-link" href="https://tiny-bits.org/" aria-label="<?= t($en, 'Zur allgemeinen tiny-bits.org-Startseite', 'Go to the main tiny-bits.org homepage') ?>" title="<?= t($en, 'tiny-bits.org Startseite', 'tiny-bits.org homepage') ?>"><?= icon('home') ?></a></div>
+  <div class="brand-cluster"><div class="brand-mark-cluster"><a class="brand" href="#start" aria-label="<?= e($identity['name']) ?> – <?= t($en, 'Start', 'Home') ?>">ws<span>.</span></a><a class="site-home-link" href="https://tiny-bits.org/" aria-label="<?= t($en, 'Zur allgemeinen tiny-bits.org-Startseite', 'Go to the main tiny-bits.org homepage') ?>" title="<?= t($en, 'tiny-bits.org Startseite', 'tiny-bits.org homepage') ?>"><?= icon('home') ?></a></div></div>
   <span class="header-name"><?= e($identity['name']) ?><small><?= e($identity['role']) ?></small></span>
   <div class="header-links">
     <a class="language-switch" href="<?= e($languageHref) ?>" lang="<?= $en ? 'de' : 'en' ?>" hreflang="<?= $en ? 'de' : 'en' ?>" aria-label="<?= t($en, 'Zur englischen Version wechseln', 'Switch to German') ?>" title="<?= t($en, 'Zur englischen Version wechseln', 'Switch to German') ?>"><span aria-hidden="true"><?= $en ? '🇩🇪' : '🇬🇧' ?></span></a>
@@ -121,7 +121,8 @@ $sections = $en
       <small><?= e($profile['hero']['traits']) ?></small>
     </aside>
   </section>
-  <nav class="section-nav" aria-label="<?= t($en, 'Abschnitte', 'Sections') ?>"><?php foreach ($sections as $id=>$label): ?><a href="#<?= e($id) ?>"><?= e($label) ?></a><?php endforeach; ?></nav>
+  <span class="section-nav-sentinel" aria-hidden="true"></span>
+  <nav class="section-nav" aria-label="<?= t($en, 'Abschnitte', 'Sections') ?>"><a class="section-nav-brand" href="#start" aria-label="<?= t($en, 'Zum Seitenanfang', 'Back to the top') ?>" aria-hidden="true" tabindex="-1">ws<span>.</span></a><?php foreach ($sections as $id=>$label): ?><a href="#<?= e($id) ?>"><?= e($label) ?></a><?php endforeach; ?></nav>
   <section class="section" id="ueber-mich" aria-labelledby="about-title">
     <p class="section-label">01 / <?= t($en, 'Über mich', 'About me') ?></p><div><h2 id="about-title" class="heading-with-icon"><?= icon('user') ?><span><?= e($profile['about']['title']) ?></span></h2>
     <?php foreach ($profile['about']['paragraphs'] as $paragraph): ?><p class="copy"><?= e($paragraph) ?></p><?php endforeach; ?>
@@ -156,5 +157,33 @@ $sections = $en
   </section>
 </main>
 <footer class="footer"><span><?= e($identity['name']) ?> · <?= e($identity['location']) ?></span><span><?= t($en, 'Mit Verstand. Und Persönlichkeit.', 'With purpose. And personality.') ?></span></footer>
+<script>
+  (() => {
+    const sentinel = document.querySelector('.section-nav-sentinel');
+    const navigation = document.querySelector('.section-nav');
+    const brand = document.querySelector('.section-nav-brand');
+    if (!sentinel || !navigation || !brand) return;
+
+    const setStickyState = (stuck) => {
+      navigation.classList.toggle('is-stuck', stuck);
+      brand.setAttribute('aria-hidden', String(!stuck));
+      brand.tabIndex = stuck ? 0 : -1;
+    };
+
+    brand.addEventListener('click', (event) => {
+      event.preventDefault();
+      history.replaceState(null, '', '#start');
+      window.scrollTo({
+        top: 0,
+        behavior: 'auto',
+      });
+    });
+
+    const observer = new IntersectionObserver(([entry]) => {
+      setStickyState(!entry.isIntersecting && entry.boundingClientRect.top < 0);
+    });
+    observer.observe(sentinel);
+  })();
+</script>
 </body>
 </html>
