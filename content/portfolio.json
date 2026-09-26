@@ -219,7 +219,7 @@
         "status": "Release candidate",
         "preview": {
           "file": "joinsplit.jpg",
-          "alt": "Gruppenübersicht der JoinSplit-Webanwendung"
+          "alt": "JoinSplit-Landingpage mit einer Drei-Schritte-Grafik zur App"
         },
         "links": [
           {
@@ -532,7 +532,7 @@
         "status": "Release candidate",
         "preview": {
           "file": "joinsplit.jpg",
-          "alt": "Group overview in the JoinSplit web application"
+          "alt": "JoinSplit landing page with a three-step graphic explaining the app"
         },
         "links": [
           {

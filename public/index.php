@@ -260,16 +260,6 @@ $sections = $en
 
     sectionLinks.forEach((link) => {
       link.addEventListener('click', (event) => {
-        if (link.hash === '#ueber-mich') {
-          event.preventDefault();
-          history.pushState(null, '', '#start');
-          window.scrollTo({
-            top: 0,
-            behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
-          });
-          return;
-        }
-
         const target = document.querySelector(link.getAttribute('href'));
         if (!target) return;
 
