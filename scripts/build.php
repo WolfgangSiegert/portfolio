@@ -6,6 +6,7 @@ set_error_handler(static function (int $severity, string $message, string $file,
     throw new ErrorException($message, 0, $severity, $file, $line);
 });
 if (!is_dir($output . '/assets')) mkdir($output . '/assets', 0755, true);
+if (!is_dir($output . '/assets/projects')) mkdir($output . '/assets/projects', 0755, true);
 if (!is_dir($output . '/downloads')) mkdir($output . '/downloads', 0755, true);
 foreach (['de', 'en'] as $portfolioLocale) {
     $command = escapeshellarg(PHP_BINARY) . ' ' . escapeshellarg($root . '/public/index.php') . ' ' . escapeshellarg($portfolioLocale);
@@ -20,6 +21,8 @@ foreach (['de', 'en'] as $portfolioLocale) {
 }
 copy($root . '/public/assets/portfolio.css', $output . '/assets/portfolio.css');
 copy($root . '/public/assets/wolfgang-siegert-portrait.jpg', $output . '/assets/wolfgang-siegert-portrait.jpg');
+copy($root . '/public/assets/projects/lern-bank.jpg', $output . '/assets/projects/lern-bank.jpg');
+copy($root . '/public/assets/projects/joinsplit.jpg', $output . '/assets/projects/joinsplit.jpg');
 copy($root . '/public/downloads/wolfgang-siegert-frontend-developer.pdf', $output . '/downloads/wolfgang-siegert-frontend-developer.pdf');
 copy($root . '/public/downloads/wolfgang-siegert-kurzprofil-lebenslauf.pdf', $output . '/downloads/wolfgang-siegert-kurzprofil-lebenslauf.pdf');
 copy($root . '/public/downloads/wolfgang-siegert-frontend-developer-en.pdf', $output . '/downloads/wolfgang-siegert-frontend-developer-en.pdf');

@@ -184,6 +184,10 @@
           "PostgreSQL"
         ],
         "tone": "atm",
+        "preview": {
+          "file": "lern-bank.jpg",
+          "alt": "Startansicht der LERN-Bank mit Geldautomaten-Simulation"
+        },
         "links": [
           {
             "href": "../atm/",
@@ -213,6 +217,10 @@
         ],
         "tone": "violet",
         "status": "Release candidate",
+        "preview": {
+          "file": "joinsplit.jpg",
+          "alt": "Gruppenübersicht der JoinSplit-Webanwendung"
+        },
         "links": [
           {
             "href": "https://joinsplit.tiny-bits.org",
@@ -489,6 +497,10 @@
           "PostgreSQL"
         ],
         "tone": "atm",
+        "preview": {
+          "file": "lern-bank.jpg",
+          "alt": "Start screen of the LEARNING Bank ATM simulation"
+        },
         "links": [
           {
             "href": "../atm/",
@@ -518,6 +530,10 @@
         ],
         "tone": "violet",
         "status": "Release candidate",
+        "preview": {
+          "file": "joinsplit.jpg",
+          "alt": "Group overview in the JoinSplit web application"
+        },
         "links": [
           {
             "href": "https://joinsplit.tiny-bits.org",
