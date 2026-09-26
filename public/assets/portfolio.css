@@ -35,3 +35,7 @@
 .project-cover-top{display:flex;align-items:center;justify-content:space-between;gap:1rem}.violet .project-cover{background:#6d5bd0;color:#fff}.project-status{flex:0 0 auto;padding:.32rem .5rem;border:1px solid currentColor;border-radius:999px;font-size:.61rem;font-weight:700;letter-spacing:.08em;line-height:1;text-transform:uppercase}
 @media(max-width:700px){.hero-card{min-height:0;padding:0;display:grid;grid-template-columns:104px minmax(0,1fr);gap:1rem;align-items:center;background:transparent}.hero-card .card-label{display:none}.hero-card .profile-photo{width:104px;margin:0}.hero-card p{margin:0;font-size:1rem}.hero-card .tags,.hero-card small{grid-column:2;margin:0}}
 .language-switch{display:inline-flex;align-items:center;justify-content:center;min-width:42px;min-height:36px;padding:7px 10px;border:1px solid var(--line);border-radius:999px;font-size:1.125rem;line-height:1}
+.section-nav-language{position:absolute;top:50%;right:5%;display:none;transform:translateY(-50%)}
+.section-nav.is-stuck{padding-right:calc(5% + 3.5rem)}
+.section-nav.is-stuck .section-nav-language{display:inline-flex}
+@media(max-width:700px){.section-nav-language{right:6%}.section-nav.is-stuck{padding-right:calc(6% + 3.5rem)}}

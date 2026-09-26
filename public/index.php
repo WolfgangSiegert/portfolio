@@ -122,7 +122,7 @@ $sections = $en
     </aside>
   </section>
   <span class="section-nav-sentinel" aria-hidden="true"></span>
-  <nav class="section-nav" aria-label="<?= t($en, 'Abschnitte', 'Sections') ?>"><a class="section-nav-brand" href="#start" aria-label="<?= t($en, 'Zum Seitenanfang', 'Back to the top') ?>">ws<span>.</span></a><?php foreach ($sections as $id=>$label): ?><a href="#<?= e($id) ?>"><?= e($label) ?></a><?php endforeach; ?></nav>
+  <nav class="section-nav" aria-label="<?= t($en, 'Abschnitte', 'Sections') ?>"><a class="section-nav-brand" href="#start" aria-label="<?= t($en, 'Zum Seitenanfang', 'Back to the top') ?>">ws<span>.</span></a><?php foreach ($sections as $id=>$label): ?><a href="#<?= e($id) ?>"><?= e($label) ?></a><?php endforeach; ?><a class="language-switch section-nav-language" href="<?= e($languageHref) ?>" lang="<?= $en ? 'de' : 'en' ?>" hreflang="<?= $en ? 'de' : 'en' ?>" aria-label="<?= t($en, 'Zur englischen Version wechseln', 'Switch to German') ?>" title="<?= t($en, 'Zur englischen Version wechseln', 'Switch to German') ?>"><span aria-hidden="true"><?= $en ? '🇩🇪' : '🇬🇧' ?></span></a></nav>
   <div class="section-context" aria-hidden="true"><div class="section-context-inner"><span></span><strong></strong></div></div>
   <section class="section" id="ueber-mich" aria-labelledby="about-title">
     <p class="section-label">01 / <?= t($en, 'Über mich', 'About me') ?></p><div><h2 id="about-title" class="heading-with-icon"><?= icon('user') ?><span><?= e($profile['about']['title']) ?></span></h2>
@@ -163,12 +163,14 @@ $sections = $en
     const sentinel = document.querySelector('.section-nav-sentinel');
     const navigation = document.querySelector('.section-nav');
     const brand = document.querySelector('.section-nav-brand');
+    const header = document.querySelector('.header');
+    const hero = document.querySelector('.hero');
     const context = document.querySelector('.section-context');
     const contextLabel = context?.querySelector('span');
     const contextTitle = context?.querySelector('strong');
     const sections = [...document.querySelectorAll('.section')];
     const sectionLinks = [...navigation.querySelectorAll('a[href^="#"]:not(.section-nav-brand)')];
-    if (!sentinel || !navigation || !brand || !context || !contextLabel || !contextTitle) return;
+    if (!sentinel || !navigation || !brand || !header || !hero || !context || !contextLabel || !contextTitle) return;
 
     let frame = 0;
     let activeSection = null;
@@ -225,6 +227,18 @@ $sections = $en
     const updateStickyMetrics = () => {
       const navigationHeight = navigation.getBoundingClientRect().height;
       const contextHeight = context.getBoundingClientRect().height;
+      hero.style.minHeight = '';
+      const naturalHeroHeight = hero.getBoundingClientRect().height;
+      const headerHeight = header.getBoundingClientRect().height;
+      const bottomAlignedHeroHeight = window.innerHeight - headerHeight - navigationHeight;
+      const belowFoldHeroHeight = window.innerHeight - headerHeight;
+
+      if (naturalHeroHeight <= bottomAlignedHeroHeight) {
+        hero.style.minHeight = `${bottomAlignedHeroHeight}px`;
+      } else if (naturalHeroHeight < belowFoldHeroHeight) {
+        hero.style.minHeight = `${belowFoldHeroHeight}px`;
+      }
+
       document.documentElement.style.setProperty('--section-nav-height', `${navigationHeight}px`);
       document.documentElement.style.setProperty('--sticky-stack-height', `${navigationHeight + contextHeight + 16}px`);
       scheduleContextUpdate();
@@ -246,6 +260,16 @@ $sections = $en
 
     sectionLinks.forEach((link) => {
       link.addEventListener('click', (event) => {
+        if (link.hash === '#ueber-mich') {
+          event.preventDefault();
+          history.pushState(null, '', '#start');
+          window.scrollTo({
+            top: 0,
+            behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+          });
+          return;
+        }
+
         const target = document.querySelector(link.getAttribute('href'));
         if (!target) return;
 
@@ -268,6 +292,7 @@ $sections = $en
     resizeObserver.observe(context);
     addEventListener('scroll', scheduleContextUpdate, { passive: true });
     addEventListener('resize', updateStickyMetrics);
+    addEventListener('load', updateStickyMetrics, { once: true });
     updateStickyMetrics();
   })();
 </script>
