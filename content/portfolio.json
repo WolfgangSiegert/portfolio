@@ -195,15 +195,20 @@
       {
         "n": "06",
         "name": "JoinSplit",
-        "kind": "Local-first Web-App",
-        "company": "Eigenes Projekt · Release Candidate · 2026",
-        "text": "Mobile-first Portfolio-Demo für kleine Gruppen: Ausgaben gleichmäßig aufteilen, Salden nachvollziehen und Ausgleichszahlungen ableiten. Lokaler Workflow mit wartender Synchronisierung, Laravel-API und deterministische Finanzlogik mit automatisierten Accessibility-Checks.",
+        "kind": "Full-Stack-Web-App",
+        "company": "Eigenes Showcase-Projekt · Release Candidate · 2026",
+        "text": "Mobile-first Webanwendung für kleine Gruppen zur Erfassung und Aufteilung gemeinsamer Ausgaben sowie zur Berechnung von Salden und Ausgleichszahlungen.",
         "tags": [
+          "Laravel",
+          "PHP",
+          "PostgreSQL",
           "Nuxt 4",
           "Vue 3",
           "TypeScript",
-          "Laravel",
-          "PostgreSQL",
+          "Pinia",
+          "Tailwind CSS",
+          "Nuxt UI",
+          "Pest",
           "Playwright"
         ],
         "tone": "violet",
@@ -211,7 +216,7 @@
         "links": [
           {
             "href": "https://joinsplit.tiny-bits.org",
-            "label": "Demo nach Deployment",
+            "label": "Live-Demo öffnen",
             "newTab": true
           },
           {
@@ -495,15 +500,20 @@
       {
         "n": "06",
         "name": "JoinSplit",
-        "kind": "Local-first web app",
-        "company": "Personal project · release candidate · 2026",
-        "text": "A mobile-first portfolio demo for small groups: split expenses evenly, understand balances, and derive settlement payments. It combines a local workflow with queued synchronization, a Laravel API, deterministic financial logic, and automated accessibility checks.",
+        "kind": "Full-stack web app",
+        "company": "Personal showcase project · release candidate · 2026",
+        "text": "A mobile-first web application for small groups to record and split shared expenses and calculate balances and settlement payments.",
         "tags": [
+          "Laravel",
+          "PHP",
+          "PostgreSQL",
           "Nuxt 4",
           "Vue 3",
           "TypeScript",
-          "Laravel",
-          "PostgreSQL",
+          "Pinia",
+          "Tailwind CSS",
+          "Nuxt UI",
+          "Pest",
           "Playwright"
         ],
         "tone": "violet",
@@ -511,7 +521,7 @@
         "links": [
           {
             "href": "https://joinsplit.tiny-bits.org",
-            "label": "Demo after deployment",
+            "label": "Open live demo",
             "newTab": true
           },
           {
