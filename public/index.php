@@ -18,6 +18,7 @@ function icon(string $name, string $class = 'icon'): string {
         'graduation'=>'<path d="m2 10 10-5 10 5-10 5L2 10Z"/><path d="M6 12v5c3 2 9 2 12 0v-5M22 10v6"/>',
         'heart'=>'<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>',
         'mail'=>'<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/>',
+        'home'=>'<path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10M9 20v-6h6v6"/>',
         'arrow-up-right'=>'<path d="M7 17 17 7M7 7h10v10"/>',
         'arrow-right'=>'<path d="M5 12h14M13 6l6 6-6 6"/>',
         'download'=>'<path d="M12 3v12M7 10l5 5 5-5M5 21h14"/>',
@@ -93,7 +94,7 @@ $sections = $en
 <body>
 <a class="skip" href="#inhalt"><?= t($en, 'Zum Inhalt springen', 'Skip to content') ?></a>
 <header class="header">
-  <a class="brand" href="#start" aria-label="<?= e($identity['name']) ?> – <?= t($en, 'Start', 'Home') ?>">ws<span>.</span></a>
+  <div class="brand-cluster"><a class="brand" href="#start" aria-label="<?= e($identity['name']) ?> – <?= t($en, 'Start', 'Home') ?>">ws<span>.</span></a><a class="site-home-link" href="https://tiny-bits.org/" aria-label="<?= t($en, 'Zur allgemeinen tiny-bits.org-Startseite', 'Go to the main tiny-bits.org homepage') ?>" title="<?= t($en, 'tiny-bits.org Startseite', 'tiny-bits.org homepage') ?>"><?= icon('home') ?></a></div>
   <span class="header-name"><?= e($identity['name']) ?><small><?= e($identity['role']) ?></small></span>
   <div class="header-links">
     <a class="language-switch" href="<?= e($languageHref) ?>" lang="<?= $en ? 'de' : 'en' ?>" hreflang="<?= $en ? 'de' : 'en' ?>" aria-label="<?= t($en, 'Zur englischen Version wechseln', 'Switch to German') ?>" title="<?= t($en, 'Zur englischen Version wechseln', 'Switch to German') ?>"><span aria-hidden="true"><?= $en ? '🇩🇪' : '🇬🇧' ?></span></a>
