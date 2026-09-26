@@ -122,7 +122,8 @@ $sections = $en
     </aside>
   </section>
   <span class="section-nav-sentinel" aria-hidden="true"></span>
-  <nav class="section-nav" aria-label="<?= t($en, 'Abschnitte', 'Sections') ?>"><a class="section-nav-brand" href="#start" aria-label="<?= t($en, 'Zum Seitenanfang', 'Back to the top') ?>" aria-hidden="true" tabindex="-1">ws<span>.</span></a><?php foreach ($sections as $id=>$label): ?><a href="#<?= e($id) ?>"><?= e($label) ?></a><?php endforeach; ?></nav>
+  <nav class="section-nav" aria-label="<?= t($en, 'Abschnitte', 'Sections') ?>"><a class="section-nav-brand" href="#start" aria-label="<?= t($en, 'Zum Seitenanfang', 'Back to the top') ?>">ws<span>.</span></a><?php foreach ($sections as $id=>$label): ?><a href="#<?= e($id) ?>"><?= e($label) ?></a><?php endforeach; ?></nav>
+  <div class="section-context" aria-hidden="true"><div class="section-context-inner"><span></span><strong></strong></div></div>
   <section class="section" id="ueber-mich" aria-labelledby="about-title">
     <p class="section-label">01 / <?= t($en, 'Über mich', 'About me') ?></p><div><h2 id="about-title" class="heading-with-icon"><?= icon('user') ?><span><?= e($profile['about']['title']) ?></span></h2>
     <?php foreach ($profile['about']['paragraphs'] as $paragraph): ?><p class="copy"><?= e($paragraph) ?></p><?php endforeach; ?>
@@ -162,12 +163,76 @@ $sections = $en
     const sentinel = document.querySelector('.section-nav-sentinel');
     const navigation = document.querySelector('.section-nav');
     const brand = document.querySelector('.section-nav-brand');
-    if (!sentinel || !navigation || !brand) return;
+    const context = document.querySelector('.section-context');
+    const contextLabel = context?.querySelector('span');
+    const contextTitle = context?.querySelector('strong');
+    const sections = [...document.querySelectorAll('.section')];
+    const sectionLinks = [...navigation.querySelectorAll('a[href^="#"]:not(.section-nav-brand)')];
+    if (!sentinel || !navigation || !brand || !context || !contextLabel || !contextTitle) return;
+
+    let frame = 0;
+    let activeSection = null;
+
+    const updateSectionContext = () => {
+      frame = 0;
+      const navigationBottom = navigation.getBoundingClientRect().bottom;
+      const readingLine = navigationBottom + context.getBoundingClientRect().height + 1;
+      const visibleSection = sections.find((section) => {
+        const bounds = section.getBoundingClientRect();
+        return bounds.top <= readingLine && bounds.bottom > readingLine;
+      });
+
+      sectionLinks.forEach((link) => {
+        if (visibleSection && link.getAttribute('href') === `#${visibleSection.id}`) {
+          link.setAttribute('aria-current', 'location');
+        } else {
+          link.removeAttribute('aria-current');
+        }
+      });
+
+      const passedSections = navigation.classList.contains('is-stuck')
+        ? sections.filter((section) => section.querySelector('h2')?.getBoundingClientRect().top <= navigationBottom)
+        : [];
+      const nextActiveSection = passedSections.at(-1) || null;
+
+      if (!nextActiveSection || nextActiveSection.getBoundingClientRect().bottom <= navigationBottom) {
+        context.classList.remove('is-visible');
+        activeSection = null;
+        return;
+      }
+
+      if (nextActiveSection !== activeSection) {
+        const label = nextActiveSection.querySelector(':scope > .section-label');
+        const title = nextActiveSection.querySelector('h2');
+        const sectionStyle = getComputedStyle(nextActiveSection);
+        const rootStyle = getComputedStyle(document.documentElement);
+        const transparent = sectionStyle.backgroundColor === 'rgba(0, 0, 0, 0)';
+
+        contextLabel.textContent = label?.textContent?.trim() || '';
+        contextTitle.textContent = title?.textContent?.trim() || '';
+        context.style.setProperty('--section-context-bg', transparent ? rootStyle.backgroundColor : sectionStyle.backgroundColor);
+        context.style.setProperty('--section-context-color', sectionStyle.color);
+        activeSection = nextActiveSection;
+      }
+
+      context.classList.add('is-visible');
+    };
+
+    const scheduleContextUpdate = () => {
+      if (!frame) frame = requestAnimationFrame(updateSectionContext);
+    };
+
+    const updateStickyMetrics = () => {
+      const navigationHeight = navigation.getBoundingClientRect().height;
+      const contextHeight = context.getBoundingClientRect().height;
+      document.documentElement.style.setProperty('--section-nav-height', `${navigationHeight}px`);
+      document.documentElement.style.setProperty('--sticky-stack-height', `${navigationHeight + contextHeight + 16}px`);
+      scheduleContextUpdate();
+    };
 
     const setStickyState = (stuck) => {
       navigation.classList.toggle('is-stuck', stuck);
-      brand.setAttribute('aria-hidden', String(!stuck));
-      brand.tabIndex = stuck ? 0 : -1;
+      scheduleContextUpdate();
     };
 
     brand.addEventListener('click', (event) => {
@@ -179,10 +244,31 @@ $sections = $en
       });
     });
 
+    sectionLinks.forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (!target) return;
+
+        event.preventDefault();
+        history.pushState(null, '', link.hash);
+        window.scrollTo({
+          top: target.getBoundingClientRect().top + window.scrollY - navigation.offsetHeight,
+          behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        });
+      });
+    });
+
     const observer = new IntersectionObserver(([entry]) => {
       setStickyState(!entry.isIntersecting && entry.boundingClientRect.top < 0);
     });
     observer.observe(sentinel);
+
+    const resizeObserver = new ResizeObserver(updateStickyMetrics);
+    resizeObserver.observe(navigation);
+    resizeObserver.observe(context);
+    addEventListener('scroll', scheduleContextUpdate, { passive: true });
+    addEventListener('resize', updateStickyMetrics);
+    updateStickyMetrics();
   })();
 </script>
 </body>
