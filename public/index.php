@@ -90,6 +90,7 @@ $sections = $en
   <link rel="icon" href="<?= $assetBase ?>favicon.svg" type="image/svg+xml">
   <title><?= e($identity['name']) ?> · Frontend Developer in Leipzig</title>
   <link rel="stylesheet" href="<?= $assetBase ?>assets/portfolio.css">
+  <script defer src="<?= $assetBase ?>assets/portfolio-traffic.js"></script>
 </head>
 <body>
 <a class="skip" href="#inhalt"><?= t($en, 'Zum Inhalt springen', 'Skip to content') ?></a>

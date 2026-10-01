@@ -20,6 +20,7 @@ foreach (['de', 'en'] as $portfolioLocale) {
     file_put_contents($target . '/index.html', $html);
 }
 copy($root . '/public/assets/portfolio.css', $output . '/assets/portfolio.css');
+copy($root . '/public/assets/portfolio-traffic.js', $output . '/assets/portfolio-traffic.js');
 copy($root . '/public/assets/wolfgang-siegert-portrait.jpg', $output . '/assets/wolfgang-siegert-portrait.jpg');
 copy($root . '/public/assets/projects/lern-bank.jpg', $output . '/assets/projects/lern-bank.jpg');
 copy($root . '/public/assets/projects/joinsplit.jpg', $output . '/assets/projects/joinsplit.jpg');

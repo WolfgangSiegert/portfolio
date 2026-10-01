@@ -1,6 +1,6 @@
 # Wolfgang Siegert · PHP Portfolio
 
-Eigenständige, vertikal lesbare PHP-Version mit serverseitigen Templates, responsivem Layout und ohne JavaScript oder externe Schrift-/CDN-Anfragen. Voraussetzung: PHP 8.1 oder neuer. Keine Composer-Abhängigkeiten.
+Eigenständige, vertikal lesbare PHP-Version mit serverseitigen Templates, responsivem Layout und ohne externe Schrift-/CDN-Anfragen. Die Darstellung funktioniert ohne JavaScript; auf den veröffentlichten Produktionsdomains sendet lediglich ein kleines, cookieloses Traffic-Skript einen Seitenaufruf an die eigene Laravel-Anwendung unter `atm.tiny-bits.org`. Voraussetzung: PHP 8.1 oder neuer. Keine Composer-Abhängigkeiten.
 
 ## Lokale Vorschau
 
@@ -31,3 +31,9 @@ Die Daten in `content/portfolio.json` sind eine generierte Kopie der zentralen P
 Der Workflow startet bei einem Push auf `main` oder manuell. Das Portfolio verlinkt die horizontale Vue-Showcase-Variante unter `/portfolio-vue/`.
 
 Eigene Domain: Settings → Pages → Custom domain. DNS beim Domainanbieter passend konfigurieren und anschließend Enforce HTTPS aktivieren. Die genaue Domain wird nicht vorgegeben.
+
+## Traffic-Erfassung
+
+`public/assets/portfolio-traffic.js` zählt ausschließlich Produktionsaufrufe. Lokale Vorschauen, automatisierte Browser und Global Privacy Control werden respektiert. Das Skript überträgt nur Version, Site und einen normalisierten Portfolio-Pfad; es verwendet weder Cookies noch `localStorage`, URL-Parameter oder einen clientseitigen Besucher-Identifier.
+
+Der zugehörige Endpunkt `POST https://atm.tiny-bits.org/api/portfolio-traffic` und die private Auswertung werden im getrennten Laravel-Projekt betrieben. Das Portfolio erst veröffentlichen, wenn dieser Endpunkt bereitsteht. Technischer Vertrag und Aussagegrenzen stehen im Parent-Dokument `TRAFFIC-LOGGING.md`.
