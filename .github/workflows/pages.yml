@@ -18,6 +18,11 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - name: Set up patched PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.5.12'
+          coverage: none
       - name: Render PHP to static HTML
         run: php scripts/build.php
       - uses: actions/configure-pages@v5

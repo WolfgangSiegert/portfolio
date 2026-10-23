@@ -1,6 +1,6 @@
 # Wolfgang Siegert · PHP Portfolio
 
-Eigenständige, vertikal lesbare PHP-Version mit serverseitigen Templates, responsivem Layout und ohne externe Schrift-/CDN-Anfragen. Die Darstellung funktioniert ohne JavaScript; auf den veröffentlichten Produktionsdomains sendet lediglich ein kleines, cookieloses Traffic-Skript einen Seitenaufruf an die eigene Laravel-Anwendung unter `atm.tiny-bits.org`. Voraussetzung: PHP 8.1 oder neuer. Keine Composer-Abhängigkeiten.
+Eigenständige, vertikal lesbare PHP-Version mit serverseitigen Templates, responsivem Layout und ohne externe Schrift-/CDN-Anfragen. Die Darstellung funktioniert ohne JavaScript; auf den veröffentlichten Produktionsdomains sendet lediglich ein kleines, cookieloses Traffic-Skript einen Seitenaufruf an die eigene Laravel-Anwendung unter `atm.tiny-bits.org`. Voraussetzung: eine sicherheitsgepatchte PHP-Version (8.2.35+, 8.3.36+, 8.4.27+ oder 8.5.12+ im jeweiligen Versionszweig). Der Pages-Workflow verwendet PHP 8.5.12. Keine Composer-Abhängigkeiten.
 
 ## Lokale Vorschau
 
