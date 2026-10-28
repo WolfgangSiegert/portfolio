@@ -41,3 +41,48 @@
 .section-nav.show-language-switch .section-nav-language{display:inline-flex}
 .section-nav a[aria-current=location]{font-weight:600}
 @media(max-width:700px){.section-nav-language{right:6%}.section-nav.show-language-switch{padding-right:calc(6% + 3.5rem)}}
+
+/* Scroll-driven reveals, inspired by the video. All content is static outside
+   this progressive enhancement, including reduced motion and print. */
+@keyframes portfolio-rise {
+  from { opacity: 0; translate: 0 60px; }
+  to { opacity: 1; translate: 0 0; }
+}
+@keyframes portfolio-card-rise {
+  from { opacity: 0; translate: 0 60px; scale: .96; }
+  to { opacity: 1; translate: 0 0; scale: 1; }
+}
+@keyframes portfolio-image-reveal {
+  from { opacity: 0; filter: blur(8px) grayscale(1) brightness(.75); scale: .92; translate: 0 36px; }
+  to { opacity: 1; filter: blur(0) grayscale(0) brightness(1); scale: 1; translate: 0 0; }
+}
+@media screen and (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) and (animation-range: entry 0% cover 40%) {
+    :where(main h2, .skill, .project, .timeline > article, .education > article, .entry) {
+      animation: portfolio-rise 1ms linear both;
+      animation-timeline: view(block 0% 12%);
+      animation-range: entry 0% cover 40%;
+    }
+    :where(.skill, .project, .timeline > article, .education > article, .entry) {
+      animation-name: portfolio-card-rise;
+      animation-timeline: view(block);
+      animation-range: entry 0% entry 80%;
+    }
+    :where(.skills-grid, .skill-grid, .project-grid) > :nth-child(3n + 2) {
+      animation-range: entry 10% entry 90%;
+    }
+    :where(.skills-grid, .skill-grid, .project-grid) > :nth-child(3n) {
+      animation-range: entry 20% entry 100%;
+    }
+    .project { view-timeline: --project-entry block; }
+    .project-preview {
+      animation: portfolio-image-reveal 1ms linear both;
+      animation-timeline: --project-entry;
+      /* Entry is bounded by the smaller of card and viewport height.
+         Finish early so tall mobile cards cannot keep readable images blurred. */
+      animation-range: entry 0% entry 50%;
+    }
+    :where(main h2, .skill, .project, .timeline > article, .education > article, .entry):focus-within,
+    .project:focus-within .project-preview { animation: none; }
+  }
+}
