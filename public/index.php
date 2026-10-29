@@ -50,15 +50,15 @@ function brand_icon(string $name): string {
 }
 function tag_icon(string $label): string {
     $brands = [
-        'Vue 2 & 3'=>['vue'], 'Vue 3'=>['vue'], 'Nuxt'=>['nuxt'], 'TypeScript'=>['typescript'], 'JavaScript'=>['javascript'],
-        'HTML & CSS'=>['html','css'], 'Tailwind CSS'=>['tailwind'], 'Vite'=>['vite'], 'Pinia / Vuex'=>['pinia','vue'],
-        'Node.js'=>['node'], 'npm / pnpm'=>['npm','pnpm'], 'Playwright'=>['playwright'], 'Vitest'=>['vitest'], 'Git'=>['git'],
+        'Vue 2 & 3'=>['vue'], 'Vue 2'=>['vue'], 'Vue 2+3'=>['vue'], 'Vue 3'=>['vue'], 'Nuxt'=>['nuxt'], 'TypeScript'=>['typescript'], 'JavaScript'=>['javascript'],
+        'HTML & CSS'=>['html','css'], 'Tailwind CSS'=>['tailwind'], 'Tailwind Components'=>['tailwind'], 'Vite'=>['vite'], 'Pinia / Vuex'=>['pinia','vue'],
+        'Node.js'=>['node'], 'npm / pnpm'=>['npm','pnpm'], 'pnpm'=>['pnpm'], 'Playwright'=>['playwright'], 'Vitest'=>['vitest'], 'Git'=>['git'],
         'Bitbucket / GitLab'=>['bitbucket','gitlab'], 'Jira / Confluence'=>['jira','confluence'], 'ChatGPT'=>['openai'],
-        'Codex'=>['openai'], 'GitHub Copilot'=>['copilot'], 'Laravel'=>['laravel'], 'PostgreSQL'=>['postgresql'],
+        'Codex'=>['openai'], 'OpenAI Codex'=>['openai'], 'GitHub Copilot'=>['copilot'], 'VS Code'=>['vscode'], 'Laravel'=>['laravel'], 'PostgreSQL'=>['postgresql'], 'Ionic'=>['ionic'], 'Capacitor'=>['capacitor'], 'Syncfusion Components'=>['syncfusion'],
     ];
     $areas = [
         'REST-APIs'=>'braces', 'REST APIs'=>'braces', 'Webanwendung'=>'app', 'Web application'=>'app', 'Web-App'=>'panels', 'Web app'=>'panels', 'PWA'=>'monitor', 'Produktentwicklung'=>'package', 'Product development'=>'package',
-        'Administration'=>'sliders', 'Mobile Apps'=>'smartphone', 'Mobile apps'=>'smartphone', 'Scrum'=>'users', 'Heimwerken'=>'hammer', 'DIY'=>'hammer', 'Zeichnen'=>'pencil', 'Drawing'=>'pencil',
+        'Administration'=>'sliders', 'Mobile Apps'=>'smartphone', 'Mobile apps'=>'smartphone', 'Scrum'=>'users', 'Familie'=>'users', 'Family'=>'users', 'Yup · Form Validation'=>'check', 'Heimwerken'=>'hammer', 'DIY'=>'hammer', 'Zeichnen'=>'pencil', 'Drawing'=>'pencil',
         'Tischtennis'=>'trophy', 'Table tennis'=>'trophy', 'Fußball'=>'circle', 'Football'=>'circle',
     ];
     $icons = '';

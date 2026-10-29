@@ -72,7 +72,10 @@
           "Pinia / Vuex",
           "Node.js",
           "npm / pnpm",
-          "REST-APIs"
+          "REST-APIs",
+          "VS Code",
+          "GitHub Copilot",
+          "OpenAI Codex"
         ]
       },
       {
@@ -97,8 +100,10 @@
         "company": "Etzensperger Informatik AG · 2024–2026",
         "text": "Mitarbeit an der Weiterentwicklung von edoobox sowie an Kundenprojekten.",
         "tags": [
-          "Webanwendung",
-          "Produktentwicklung"
+          "Vue 2+3",
+          "Syncfusion Components",
+          "Tailwind CSS",
+          "JavaScript"
         ],
         "tone": "blue",
         "links": [
@@ -116,8 +121,11 @@
         "company": "LeanERA · 2021–2023",
         "text": "Mitwirkung an propoints und ZF propoints im Rahmen der Webentwicklung bei LeanERA.",
         "tags": [
-          "Web-App",
-          "Administration"
+          "Vue 3",
+          "Nuxt",
+          "TypeScript",
+          "pnpm",
+          "Yup · Form Validation"
         ],
         "tone": "ice",
         "links": [
@@ -135,8 +143,11 @@
         "company": "LeanERA · 2021–2023",
         "text": "Mitwirkung an einer Progressive Web App und dem zugehörigen Admin-Backend.",
         "tags": [
-          "PWA",
-          "Administration"
+          "Vue 3",
+          "Tailwind CSS",
+          "TypeScript",
+          "pnpm",
+          "Yup · Form Validation"
         ],
         "tone": "lime",
         "links": [
@@ -154,8 +165,14 @@
         "company": "LeanERA · 2021–2023",
         "text": "Mitwirkung an mobilen Apps und ihren Admin-Backends.",
         "tags": [
-          "Mobile Apps",
-          "Administration"
+          "Vue 3",
+          "Nuxt",
+          "Tailwind CSS",
+          "TypeScript",
+          "Ionic",
+          "Capacitor",
+          "pnpm",
+          "Yup · Form Validation"
         ],
         "tone": "ink",
         "links": [
@@ -274,7 +291,7 @@
       ],
       "tools": [
         "ChatGPT",
-        "Codex",
+        "OpenAI Codex",
         "GitHub Copilot"
       ],
       "note": "Unterstützung im Entwicklungsprozess. Qualität bleibt eine bewusste Entscheidung."
@@ -299,8 +316,9 @@
       "title": "Auch abseits des Bildschirms.",
       "text": "Leipzig ist mein Zuhause. Ich lebe in einer festen Partnerschaft und bin Vater von drei Kindern.",
       "born": "Geboren am 02.02.1983",
-      "languages": "Sprachen: Deutsch, Englisch, Portugiesisch, Spanisch und Französisch",
+      "languages": "Sprachen: Deutsch, Englisch und Portugiesisch",
       "interests": [
+        "Familie",
         "Heimwerken",
         "Zeichnen",
         "Tischtennis",
@@ -385,7 +403,10 @@
           "Pinia / Vuex",
           "Node.js",
           "npm / pnpm",
-          "REST APIs"
+          "REST APIs",
+          "VS Code",
+          "GitHub Copilot",
+          "OpenAI Codex"
         ]
       },
       {
@@ -410,8 +431,10 @@
         "company": "Etzensperger Informatik AG · 2024–2026",
         "text": "Contributed to the ongoing development of edoobox and to customer projects.",
         "tags": [
-          "Web application",
-          "Product development"
+          "Vue 2+3",
+          "Syncfusion Components",
+          "Tailwind CSS",
+          "JavaScript"
         ],
         "tone": "blue",
         "links": [
@@ -429,8 +452,11 @@
         "company": "LeanERA · 2021–2023",
         "text": "Contributed to propoints and ZF propoints as part of the web development team at LeanERA.",
         "tags": [
-          "Web app",
-          "Administration"
+          "Vue 3",
+          "Nuxt",
+          "TypeScript",
+          "pnpm",
+          "Yup · Form Validation"
         ],
         "tone": "ice",
         "links": [
@@ -448,8 +474,11 @@
         "company": "LeanERA · 2021–2023",
         "text": "Contributed to a progressive web app and its associated admin backend.",
         "tags": [
-          "PWA",
-          "Administration"
+          "Vue 3",
+          "Tailwind CSS",
+          "TypeScript",
+          "pnpm",
+          "Yup · Form Validation"
         ],
         "tone": "lime",
         "links": [
@@ -467,8 +496,14 @@
         "company": "LeanERA · 2021–2023",
         "text": "Contributed to mobile apps and their admin backends.",
         "tags": [
-          "Mobile apps",
-          "Administration"
+          "Vue 3",
+          "Nuxt",
+          "Tailwind CSS",
+          "TypeScript",
+          "Ionic",
+          "Capacitor",
+          "pnpm",
+          "Yup · Form Validation"
         ],
         "tone": "ink",
         "links": [
@@ -587,7 +622,7 @@
       ],
       "tools": [
         "ChatGPT",
-        "Codex",
+        "OpenAI Codex",
         "GitHub Copilot"
       ],
       "note": "Support in the development process. Quality remains a conscious decision."
@@ -612,8 +647,9 @@
       "title": "Away from the screen, too.",
       "text": "Leipzig is my home. I live with my long-term partner and am a father of three.",
       "born": "Born on 2 February 1983",
-      "languages": "Languages: German, English, Portuguese, Spanish and French",
+      "languages": "Languages: German, English and Portuguese",
       "interests": [
+        "Family",
         "DIY",
         "Drawing",
         "Table tennis",
