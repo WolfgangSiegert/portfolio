@@ -50,11 +50,11 @@ function brand_icon(string $name): string {
 }
 function tag_icon(string $label): string {
     $brands = [
-        'Vue 2 & 3'=>['vue'], 'Vue 2'=>['vue'], 'Vue 2+3'=>['vue'], 'Vue 3'=>['vue'], 'Nuxt'=>['nuxt'], 'TypeScript'=>['typescript'], 'JavaScript'=>['javascript'],
-        'HTML & CSS'=>['html','css'], 'Tailwind CSS'=>['tailwind'], 'Tailwind Components'=>['tailwind'], 'Vite'=>['vite'], 'Pinia / Vuex'=>['pinia','vue'],
+        'Vue 2 & 3'=>['vue'], 'Vue 2'=>['vue'], 'Vue 2+3'=>['vue'], 'Vue 3'=>['vue'], 'Nuxt'=>['nuxt'], 'Nuxt 4'=>['nuxt'], 'Nuxt UI'=>['nuxt'], 'TypeScript'=>['typescript'], 'JavaScript'=>['javascript'],
+        'HTML & CSS'=>['html','css'], 'Tailwind CSS'=>['tailwind'], 'Tailwind Components'=>['tailwind'], 'Vite'=>['vite'], 'Pinia / Vuex'=>['pinia','vue'], 'Pinia'=>['pinia'],
         'Node.js'=>['node'], 'npm / pnpm'=>['npm','pnpm'], 'pnpm'=>['pnpm'], 'Playwright'=>['playwright'], 'Vitest'=>['vitest'], 'Git'=>['git'],
         'Bitbucket / GitLab'=>['bitbucket','gitlab'], 'Jira / Confluence'=>['jira','confluence'], 'ChatGPT'=>['openai'],
-        'Codex'=>['openai'], 'OpenAI Codex'=>['openai'], 'GitHub Copilot'=>['copilot'], 'VS Code'=>['vscode'], 'Laravel'=>['laravel'], 'PostgreSQL'=>['postgresql'], 'Ionic'=>['ionic'], 'Capacitor'=>['capacitor'], 'Syncfusion Components'=>['syncfusion'],
+        'Codex'=>['openai'], 'OpenAI Codex'=>['openai'], 'GitHub Copilot'=>['copilot'], 'VS Code'=>['vscode'], 'Laravel'=>['laravel'], 'PostgreSQL'=>['postgresql'], 'Ionic'=>['ionic'], 'Capacitor'=>['capacitor'], 'PHP'=>['php'], 'Pest'=>['pest'], 'Syncfusion Components'=>['syncfusion'],
     ];
     $areas = [
         'REST-APIs'=>'braces', 'REST APIs'=>'braces', 'Webanwendung'=>'app', 'Web application'=>'app', 'Web-App'=>'panels', 'Web app'=>'panels', 'PWA'=>'monitor', 'Produktentwicklung'=>'package', 'Product development'=>'package',

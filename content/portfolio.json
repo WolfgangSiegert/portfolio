@@ -103,7 +103,8 @@
           "Vue 2+3",
           "Syncfusion Components",
           "Tailwind CSS",
-          "JavaScript"
+          "JavaScript",
+          "Playwright"
         ],
         "tone": "blue",
         "links": [
@@ -125,7 +126,8 @@
           "Nuxt",
           "TypeScript",
           "pnpm",
-          "Yup · Form Validation"
+          "Yup · Form Validation",
+          "Playwright"
         ],
         "tone": "ice",
         "links": [
@@ -172,7 +174,8 @@
           "Ionic",
           "Capacitor",
           "pnpm",
-          "Yup · Form Validation"
+          "Yup · Form Validation",
+          "Playwright"
         ],
         "tone": "ink",
         "links": [
@@ -434,7 +437,8 @@
           "Vue 2+3",
           "Syncfusion Components",
           "Tailwind CSS",
-          "JavaScript"
+          "JavaScript",
+          "Playwright"
         ],
         "tone": "blue",
         "links": [
@@ -456,7 +460,8 @@
           "Nuxt",
           "TypeScript",
           "pnpm",
-          "Yup · Form Validation"
+          "Yup · Form Validation",
+          "Playwright"
         ],
         "tone": "ice",
         "links": [
@@ -503,7 +508,8 @@
           "Ionic",
           "Capacitor",
           "pnpm",
-          "Yup · Form Validation"
+          "Yup · Form Validation",
+          "Playwright"
         ],
         "tone": "ink",
         "links": [
